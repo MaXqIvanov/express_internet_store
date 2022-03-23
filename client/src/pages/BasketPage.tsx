@@ -13,6 +13,7 @@ export const BasketPage = () => {
           <TempsBasketPage serR={serR} props={JSON.parse(String((localStorage.getItem(elem))))} />
           
         </div>)}
+        <div className='Order'>Оформить заказ</div>
     </div>
   )
 }

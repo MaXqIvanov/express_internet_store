@@ -4,8 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addTodo, decrement, increment } from '../Redux/toolkitSlice'
 import { TempsStorePage } from '../components/TempsStorePage'
 import { Pagination, Spinner } from 'react-bootstrap'
+import { changeLoading } from '../Redux/prodSlice'
 
 export const StorePage = (props:any) => {
+    const dispatch = useDispatch()
     const zagl = [0,1,2,3,4]
    const prods = useSelector((state:any)=> state.prod.prods[0])
    const loading = useSelector((state:any)=> state.prod.loading)
@@ -14,9 +16,10 @@ export const StorePage = (props:any) => {
    let items = [];
    for (let number = 1; number <= props.pageCount; number++) {
      items.push(
-       <Pagination.Item onClick={()=>{setActive(number)
+       <Pagination.Item className='PaginationItem' onClick={()=>{setActive(number)
        props.setPage(number)
-       }} key={number} active={number === active}>
+       dispatch(changeLoading(true))
+       }} key={number} active={number === active} >
          {number}
        </Pagination.Item>,
      );

@@ -35,6 +35,7 @@ export const TempsStorePage = (props:any) => {
       : <Button className='Button_StorePage btn-success'>✓</Button>}
      
       <div className='div_for_price_storePage'>{props.elem.price} ₽</div>
+      <div className='div_for_name_storePage'>{props.elem.name}</div>
     </div>
   )
 }

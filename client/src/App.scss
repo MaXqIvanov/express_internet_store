@@ -39,8 +39,46 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.page-link {
+  background: rgb(24, 33, 43);
+  color: white;
+}
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: rgb(24, 33, 43);
+  border: 2px white solid;
+  border-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+.div_for_name_storePage {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+}
 
 // BasketPage
+.main_div_basketPage {
+  position: relative;
+}
+.Order {
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+  border: 1px white solid;
+  border-radius: 25px;
+  text-align: center;
+
+  &:hover {
+    background: crimson;
+    transition: all 0.4s linear;
+  }
+}
 .temp_div_basketPage {
   margin-top: 20px;
   margin-bottom: 20px;
