@@ -12,6 +12,7 @@ const prodSlice = createSlice({
     },
     reducers: {
         addProd(state, action){
+            state.prods.splice(0,2)  
             state.prods.push(action.payload)
         },
         changeCheck(state, action){

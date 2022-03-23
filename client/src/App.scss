@@ -30,6 +30,16 @@
   bottom: 0px;
   right: 0px;
 }
+.main_div_StorePage_up {
+  position: relative;
+}
+.Pagination {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // BasketPage
 .temp_div_basketPage {
   margin-top: 20px;
