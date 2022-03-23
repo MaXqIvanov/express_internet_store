@@ -63,12 +63,12 @@
 .main_div_basketPage {
   position: relative;
 }
-.Order {
+.Order_btn {
   width: 150px;
   height: 30px;
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
+  position: fixed;
+  bottom: 25px;
+  right: 40px;
   cursor: pointer;
   border: 1px white solid;
   border-radius: 25px;
@@ -77,6 +77,24 @@
   &:hover {
     background: crimson;
     transition: all 0.4s linear;
+  }
+}
+.Order_label {
+  position: fixed;
+  height: 400px;
+  width: 800px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 25px;
+
+  .Order_btn_inside {
+    width: 37px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
   }
 }
 .temp_div_basketPage {
@@ -144,4 +162,74 @@
     overflow-y: scroll;
     left: 150px;
   }
+}
+
+// TempOrderPage
+.TempOrderPage_div {
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+
+  height: 50px;
+  width: 100%;
+  position: relative;
+
+  .data_name {
+    position: absolute;
+    top: 50%;
+    left: 200px;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+  .data_price {
+    position: absolute;
+    top: 50%;
+    left: 300px;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+}
+.Order_page_basket {
+  margin-top: 75px;
+  border-top: 1px solid black;
+  height: 200px;
+  overflow-y: scroll;
+}
+.button_order_basket {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+}
+.form_order_basket_tel {
+  position: absolute;
+  bottom: 20px;
+  left: 300px;
+  margin-top: 4px;
+  color: black;
+  width: 200px;
+}
+.form_order_basket_name {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  margin-top: 4px;
+  color: black;
+  width: 200px;
+}
+.Button_oder_basket {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.price_order_basket {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  color: black;
 }
