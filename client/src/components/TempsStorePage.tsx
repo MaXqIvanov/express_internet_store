@@ -6,9 +6,12 @@ import { changeCheck } from '../Redux/prodSlice';
 
 export const TempsStorePage = (props:any) => {
   const dispatch = useDispatch()
-
+  
+  
   const checker = (props:any)=>{
-    localStorage.setItem(props.elem.name, JSON.stringify(props.elem))
+    let g = props.elem
+    g = {...props.elem, ordered: false}
+    localStorage.setItem(props.elem.name, JSON.stringify(g))
   }
   // console.log("this is just props + " + props.elem.id);
   const [checks, setChecks] = useState<any | null>(0)

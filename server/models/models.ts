@@ -29,6 +29,17 @@ export const Basket = sequelize.define('Basket',{
     count: {type: DataTypes.INTEGER, defaultValue: 0},
 })
 
+export const Orders = sequelize.define('Orders',{
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    name: {type: DataTypes.STRING, allowNull: false},
+    description: {type: DataTypes.STRING, allowNull: true},
+    price: {type: DataTypes.INTEGER, allowNull: false},
+    trueid: {type: DataTypes.INTEGER, allowNull: true},
+    timeToDeliver: {type: DataTypes.INTEGER, defaultValue: 2},
+    namePerson: {type: DataTypes.STRING, allowNull: false},
+    telPerson: {type: DataTypes.BIGINT(13), allowNull: false}
+})
+
 // Basket.hasMany(interStore)
 // interStore.belongsTo(Basket)
 

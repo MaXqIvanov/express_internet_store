@@ -38,6 +38,12 @@
   bottom: -50px;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: 600px) {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translate(0, 0);
+  }
 }
 .page-link {
   background: rgb(24, 33, 43);
@@ -50,6 +56,9 @@
   border: 2px white solid;
   border-color: rgb(255, 255, 255);
   box-sizing: border-box;
+  @media (max-width: 600px) {
+    border-color: red;
+  }
 }
 
 .div_for_name_storePage {
@@ -88,6 +97,10 @@
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 25px;
+
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 
   .Order_btn_inside {
     width: 37px;
@@ -160,7 +173,7 @@
     height: 140px;
     width: 160px;
     overflow-y: scroll;
-    left: 150px;
+    left: 165px;
   }
 }
 
@@ -176,16 +189,22 @@
   .data_name {
     position: absolute;
     top: 50%;
-    left: 200px;
+    left: 43%;
     transform: translate(-50%, -50%);
     color: black;
+    @media (max-width: 600px) {
+      left: 100px;
+    }
   }
   .data_price {
     position: absolute;
     top: 50%;
-    left: 300px;
+    left: 55%;
     transform: translate(-50%, -50%);
     color: black;
+    @media (max-width: 600px) {
+      left: 200px;
+    }
   }
 }
 .Order_page_basket {
@@ -209,6 +228,11 @@
   margin-top: 4px;
   color: black;
   width: 200px;
+
+  @media (max-width: 600px) {
+    left: 50px;
+    bottom: 100px;
+  }
 }
 .form_order_basket_name {
   position: absolute;
@@ -232,4 +256,12 @@
   height: 30px;
   text-align: center;
   color: black;
+}
+.order_confirm {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  width: 180px;
+  height: 20px;
+  color: crimson;
 }

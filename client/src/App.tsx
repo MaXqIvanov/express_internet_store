@@ -14,7 +14,7 @@ function App() {
 
   const dispatch = useDispatch()
   const [page,setPage] = useState<number>(1)
-  const [pageCount, setPageCount] = useState(5)
+  const [pageCount, setPageCount] = useState(3)
   useEffect(() => {
     axios.get('http://127.0.0.1:5000/api/goods'+`?page=${page}`).then((response: any) => { 
       dispatch(addProd(response.data.rows))
