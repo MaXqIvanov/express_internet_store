@@ -1,0 +1,32 @@
+.main_div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  scroll-behavior: smooth;
+}
+.main_div_wrapper {
+  height: 100%;
+  @media (max-width: 900px) {
+    width: 90%;
+  }
+}
+.upper {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  text-align: center;
+  font-size: 25px;
+  border: 1px solid white;
+  cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}

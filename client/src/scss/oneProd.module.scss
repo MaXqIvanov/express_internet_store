@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+.main_div_oneProd {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  @media (max-width: 780px) {
+    min-height: 120vh;
+  }
+}
+.main_div_wrapper {
+  height: 96%;
+  width: 90%;
+  position: relative;
+}
+.image_div {
+  height: 300px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.price {
+  position: absolute;
+  top: 360px;
+  left: 125px;
+  font-size: 5vh;
+  transform: translate(-50%, 0);
+  @media (max-width: 780px) {
+    left: 85px;
+  }
+}
+
+.description {
+  position: absolute;
+  top: 0px;
+  left: 320px;
+  max-width: 500px;
+  width: 500px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  overflow-y: auto;
+  font-size: large;
+
+  @media (max-width: 930px) {
+    width: 400px;
+  }
+  @media (max-width: 780px) {
+    width: 300px;
+    text-align: left;
+    left: 10px;
+    top: 420px;
+  }
+}
+.name {
+  position: absolute;
+  width: 500px;
+  text-align: center;
+  height: 50px;
+  top: 20px;
+  left: 320px;
+  font-size: xx-large;
+  transform: translate(0, 0);
+
+  @media (max-width: 930px) {
+    width: 400px;
+  }
+  @media (max-width: 780px) {
+    top: 400px;
+    left: 10px;
+    width: 300px;
+    text-align: start;
+  }
+}
+.raiting {
+  position: absolute;
+  left: 450px;
+  top: 55%;
+  height: 50px;
+  width: 280px;
+  display: flex;
+  font-size: 25px;
+  .star {
+    color: white;
+  }
+
+  @media (max-width: 780px) {
+    left: 10px;
+    top: 680px;
+  }
+}
+.setRaiting {
+  position: absolute;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  justify-content: center;
+
+  top: 300px;
+  left: 85px;
+}
+.stars {
+  font-size: 40px;
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.setOneRaiting {
+  font-size: 15px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(0, 0, 0);
+}
