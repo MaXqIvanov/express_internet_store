@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+$main_order-color: white;
+
 .any_div {
   display: flex;
   justify-content: center;
@@ -6,6 +9,7 @@
 
 // tempStorePage
 .tempStorePage_div {
+  font-family: 'Montserrat', sans-serif;
   border: 1px solid white;
   height: 300px;
   width: 250px;
@@ -18,6 +22,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  cursor: pointer;
 }
 .div_for_price_storePage {
   position: absolute;
@@ -43,11 +48,15 @@
     left: 10px;
     top: 50%;
     transform: translate(0, 0);
+    display: inline-table;
   }
 }
 .page-link {
   background: rgb(24, 33, 43);
   color: white;
+  @media (max-width: 600px) {
+    border-radius: 50%;
+  }
 }
 .page-item.active .page-link {
   z-index: 3;
@@ -57,7 +66,7 @@
   border-color: rgb(255, 255, 255);
   box-sizing: border-box;
   @media (max-width: 600px) {
-    border-color: red;
+    border-color: rgb(250, 0, 196);
   }
 }
 
@@ -79,10 +88,10 @@
   bottom: 25px;
   right: 40px;
   cursor: pointer;
-  border: 1px white solid;
+  border: 1px main_order solid;
   border-radius: 25px;
   text-align: center;
-
+  background: crimson;
   &:hover {
     background: crimson;
     transition: all 0.4s linear;
@@ -95,9 +104,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
   border-radius: 25px;
-
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(0, 72, 85);
+  color: $main_order-color;
   @media (max-width: 800px) {
     width: 90%;
   }
@@ -108,6 +118,7 @@
     top: 10px;
     right: 10px;
     border-radius: 50%;
+    color: $main_order-color;
   }
 }
 .temp_div_basketPage {
@@ -116,7 +127,7 @@
   border-radius: 25px;
   width: 100%;
   height: 200px;
-  border: solid white 1px;
+  border: solid $main_order-color 1px;
   position: relative;
 }
 .temp_div_img_basketPage {
@@ -145,12 +156,20 @@
     top: 90%;
     left: 45px;
   }
+  @media (max-width: 450px) {
+    top: 84%;
+  }
 }
 .price_div_basketPage {
   position: absolute;
   top: 50%;
   right: 20px;
   transform: translate(0, -50%);
+  @media (max-width: 450px) {
+    left: 45px;
+    top: 94%;
+    transform: translate3d(0, 0);
+  }
 }
 .btn_delete_basket {
   width: 42px;
@@ -179,7 +198,7 @@
 
 // TempOrderPage
 .TempOrderPage_div {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $main_order-color;
   box-sizing: border-box;
 
   height: 50px;
@@ -191,7 +210,6 @@
     top: 50%;
     left: 43%;
     transform: translate(-50%, -50%);
-    color: black;
     @media (max-width: 600px) {
       left: 100px;
     }
@@ -199,9 +217,8 @@
   .data_price {
     position: absolute;
     top: 50%;
-    left: 55%;
+    left: 59%;
     transform: translate(-50%, -50%);
-    color: black;
     @media (max-width: 600px) {
       left: 200px;
     }
@@ -209,9 +226,11 @@
 }
 .Order_page_basket {
   margin-top: 75px;
-  border-top: 1px solid black;
+  border-top: 1px solid rgb(255, 255, 255);
   height: 200px;
   overflow-y: scroll;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 .button_order_basket {
   position: absolute;
@@ -226,7 +245,6 @@
   bottom: 20px;
   left: 300px;
   margin-top: 4px;
-  color: black;
   width: 200px;
 
   @media (max-width: 600px) {
@@ -239,23 +257,23 @@
   bottom: 20px;
   left: 50px;
   margin-top: 4px;
-  color: black;
   width: 200px;
 }
 .Button_oder_basket {
   position: absolute;
   bottom: 20px;
   right: 20px;
+  z-index: 2;
+  background: #004855;
 }
 .price_order_basket {
   position: absolute;
   top: 15px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 200px;
+  width: 240px;
   height: 30px;
   text-align: center;
-  color: black;
 }
 .order_confirm {
   position: absolute;
@@ -264,4 +282,56 @@
   width: 180px;
   height: 20px;
   color: crimson;
+}
+.Order_page_basket::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+}
+.Order_page_basket::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* цвет дорожки */
+  border-radius: 25px;
+}
+.Order_page_basket::-webkit-scrollbar-thumb {
+  background-color: #b8e5ff; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 3px solid #b8e5ff; /* padding вокруг плашки */
+}
+
+.description_div_basketPage::-webkit-scrollbar {
+  width: 12px; /* ширина scrollbar */
+  @media (max-width: 800px) {
+    width: 6px;
+  }
+}
+.description_div_basketPage::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* цвет дорожки */
+  border-radius: 25px;
+}
+.description_div_basketPage::-webkit-scrollbar-thumb {
+  background-color: #b8e5ff; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 3px solid #b8e5ff; /* padding вокруг плашки */
+  @media (max-width: 800px) {
+    border: 1px solid #b8e5ff;
+  }
+}
+
+.Link_on_good {
+  height: 100%;
+  width: 100%;
+  background: red;
+  z-index: 2;
+}
+.div_storePage_explain {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  font-size: large;
+  text-align: center;
+  bottom: 10px;
+  left: 0px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: xx-large;
+
+  z-index: 2;
 }

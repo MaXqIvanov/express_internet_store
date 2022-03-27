@@ -24,7 +24,9 @@ export const StorePage = (props:any) => {
        </Pagination.Item>,
      );
    }
-   console.log("Ренден сторпейдж");
+  
+  //  Train
+ 
    
   return (
     <div className='main_div_StorePage_up'>

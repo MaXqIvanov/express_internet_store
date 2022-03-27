@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { CloseButton } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { changeOrderPrice } from '../Redux/orderSlice'
@@ -10,27 +10,18 @@ export const TempOrderPage = (props:any) => {
     
     const filtr = ()=>{
        props.serR(props.r.filter((elem:any)=>
-            elem != props.props.name
+            elem !== props.props.name
         ))
         
     }
 
-    // const filterOrdered = (elems:any)=>{
-    //   console.log(props.props.ordered)
-    //   props.serR(props.r.filter((elem:any)=>
-    //         elems == false
-    //   ))
-    // }
-    // useEffect(() => {
-    //   filterOrdered(props.props.ordered)
-    // }, [])
     
    
 
   return (
 
     <div className='TempOrderPage_div'>
-        <CloseButton onClick={()=>{
+        <CloseButton variant='white' onClick={()=>{
             dispatch(changeOrderPrice(-props.props.price))
             filtr()
         }} className='btn button_order_basket'  />

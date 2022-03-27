@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
   height: 100%;
@@ -13,6 +16,9 @@ body {
 #root {
   height: 100%;
   width: 100%;
+  @media (max-width: 1000px) {
+    padding-top: 55px;
+  }
 }
 // Header
 .Header {
@@ -49,6 +55,9 @@ body {
 }
 .link_price_block {
   display: flex;
+  @media (max-width: 900px) {
+    margin-right: 20px;
+  }
 }
 .Link {
   text-decoration: none;
@@ -82,6 +91,10 @@ body {
   margin-top: 10px;
   margin-bottom: 80px;
 
+  @media (min-width: 1400px) {
+    grid-template-columns: 24% 24% 24% 24%;
+    column-gap: 1.33%;
+  }
   @media (max-width: 800px) {
     grid-template-columns: 49% 49%;
   }
@@ -90,9 +103,19 @@ body {
   }
 }
 // Footer
-.Footer {
+.Footer_div {
+  padding-bottom: 22px;
   margin-top: 20px;
   height: 20px;
+  font-size: small;
   width: 100%;
   border-top: 1px solid white;
+
+  p {
+    cursor: pointer;
+  }
+
+  @media (max-width: 900px) {
+    padding-left: 30px;
+  }
 }

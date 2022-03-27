@@ -7,6 +7,7 @@ const ordersController = require('../controllers/ordersController')
 
 // Goods
 router.get('/goods', goodsController.getAll )
+router.get('/goods/:id', goodsController.getOne)
 
 
 

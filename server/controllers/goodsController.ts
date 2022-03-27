@@ -19,7 +19,21 @@ class goodsController{
         
     }
 
-
+    async getOne(req:any, res:any){
+        try {
+            const {id} = req.params
+            const device = await interStore.findOne(
+                {
+                    where: {id},
+                }
+            )
+            return res.json(device)
+        } catch (error:any) {
+            return res.json(error.message)
+            
+        }
+       
+    }
 
 
 }

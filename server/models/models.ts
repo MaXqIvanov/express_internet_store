@@ -16,6 +16,7 @@ export const interStore = sequelize.define('interStore',{
     description: {type: DataTypes.STRING, },
     price: {type: DataTypes.INTEGER, },
     url: {type: DataTypes.STRING},
+    raiting: {type: DataTypes.INTEGER},
 
 })
 

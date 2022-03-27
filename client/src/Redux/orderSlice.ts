@@ -8,7 +8,7 @@ const orderSlice = createSlice({
     },
     reducers: {
         changeOrderPrice(state, action){
-            state.price = state.price + action.payload
+            state.price = state.price + Number(action.payload)
             if(state.price < 0){
                 state.price = 0
             }

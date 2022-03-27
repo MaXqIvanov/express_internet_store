@@ -18,7 +18,7 @@ export const TempsBasketPage = (props:any) => {
         <div className='name_div_basketPage'>{props.props.name}</div>
         <div className='price_div_basketPage'>{props.props.price} ₽</div>
         <div className='description_div_basketPage'>{props.props.description}</div>
-        {props.props.ordered ? <div className='order_confirm'>Ваш заказ оформлен</div> : <div className='order_confirm'>ждёт оформления</div>}
+        {props.props.ordered ? <div className='order_confirm'>Ваш заказ оформлен</div> : <div className='order_confirm'>ждёт оформления...</div>}
         
         <Button variant="outline-light" className='btn_delete_basket btn '
         onClick={()=>{
@@ -26,7 +26,7 @@ export const TempsBasketPage = (props:any) => {
           removeItemStorage(props.props.name)
           props.serR(Object.keys(localStorage))
         }}
-        >X</Button>
+        >✘</Button>
     </div>
   )
 }

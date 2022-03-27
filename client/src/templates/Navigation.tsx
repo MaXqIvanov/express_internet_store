@@ -27,10 +27,10 @@ useEffect(() => {
   
   return (
     <div className='main_div_navigation'>
-        <div className='main_logo_div'>Logo</div>
+        <div className='main_logo_div'>Web Liter.ru</div>
         <div className='link_price_block'>
            <Link className='Link' to="/">Главная</Link>
-           <Link className='Link Link_basket' to="/Basket"></Link>
+           <Link title='Перейти в корзину' className='Link Link_basket' to="/Basket"></Link>
            <div className='price_navigation_block'>{price} ₽</div>
         </div>
     </div>
