@@ -1,5 +1,5 @@
 /client/node_modules
 /server/node_modules
 /.env
-/client/src/.env
+/client/.env
 /server/.env
