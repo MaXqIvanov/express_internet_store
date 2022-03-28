@@ -22,7 +22,7 @@ export const OneProodsPage = (props:any) => {
             <div className={s.description}><p>{item[0].description}</p> </div>
             <div className={s.name}>{item[0].name} </div>
             <div className={s.raiting}><div className={s.star}>Рейтинг товара: ★</div>{item[0].raiting} </div>
-            <div className={s.setRaiting}>{raits.map((elem:any , index:any)=><div className={s.stars} onClick={()=>{
+            <div className={s.setRaiting}>{raits.map((elem:any , index:any)=><div key={index} className={s.stars} onClick={()=>{
                 setTipStart(elem)
                 alert("Оставлять отзыв может только зарегистрированный пользователь")
             }}>★<div className={s.setOneRaiting}>{elem}</div></div>)}</div>

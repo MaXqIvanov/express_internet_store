@@ -119,3 +119,18 @@ body {
     padding-left: 30px;
   }
 }
+
+.g-signin2 {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.SignIn_div {
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

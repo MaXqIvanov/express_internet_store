@@ -113,6 +113,11 @@
   position: relative;
   margin-left: 10px;
   cursor: pointer;
+
+  &:hover {
+    color: yellow;
+    transition: all 0.3s linear;
+  }
 }
 .setOneRaiting {
   font-size: 15px;

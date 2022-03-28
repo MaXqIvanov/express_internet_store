@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import './App.scss';
 import { OneProodsPage } from './components/OneProodsPage';
+import { Auth } from './pages/Auth';
 import { BasketPage } from './pages/BasketPage';
 import { ConfidencePage } from './pages/ConfidencePage';
 import { StorePage } from './pages/StorePage';
@@ -11,7 +12,10 @@ import { addProd, changeLoading } from './Redux/prodSlice';
 import { Footer } from './templates/Footer';
 import { Header } from './templates/Header';
 
+
 function App() {
+
+  
   const limit:number = 4   // число зависит от количества элементов, которые мы отображаем на одной страничке 
 
   const dispatch = useDispatch()
@@ -43,7 +47,9 @@ function App() {
                 <Route path="/" element={<div className='maid_div_page2'><Header /> <StorePage pageCount={pageCount} page={page} setPage={setPage}/> <Footer /></div>} />
                 <Route path="/basket" element={<div className='maid_div_page2'><Header /> <BasketPage /> <Footer /></div>} />
                 <Route path="/confidentiality" element={<div className='maid_div_page2'><Header /><ConfidencePage /></div>} />
+                <Route path="/auth" element={<div className='maid_div_page2'><Auth /></div>} />
                 <Route path="/:id/" element={<div className='maid_div_page2'><Header /><OneProodsPage index={index}/> <Footer /></div>} />
+               
       </Routes>
     </div>
   );

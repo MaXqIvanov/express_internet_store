@@ -4,7 +4,7 @@ import { TempsBasketPage } from '../components/TempsBasketPage';
 import { OrderPage } from './OrderPage';
 
 export const BasketPage = () => {
-  const [r, serR] = useState(Object.keys(localStorage))
+  const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
   const [orderlabel, setOrderLabel] = useState(false)
  
   

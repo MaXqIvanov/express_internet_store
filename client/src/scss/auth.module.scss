@@ -1,0 +1,81 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.registr {
+  height: 35%;
+  min-height: 200px;
+  width: 60%;
+  min-width: 300px;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 25px;
+}
+
+.signButton {
+  position: absolute;
+  height: 30px;
+  bottom: 20px;
+  left: 50%;
+  width: 120px;
+  transform: translate(-50%, 0);
+  border: 1px solid crimson;
+  text-align: center;
+  border-radius: 25px;
+  cursor: pointer;
+  &:hover {
+    background: crimson;
+    transition: all 0.3s linear;
+  }
+}
+.div_title {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: large;
+}
+.img_person {
+  position: absolute;
+  border: 1px solid white;
+  height: 50px;
+  width: 50px;
+  top: 20px;
+  right: 30px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.img_google {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 40px;
+  width: 40px;
+  background-image: url('../images/google_logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+
+  @media (max-width: 600px) {
+    top: 90px;
+  }
+}
+.navHome {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('../images/navHome.svg');
+  color: white;
+  cursor: pointer;
+}

@@ -8,7 +8,7 @@ import { changeOrderPrice, rerenderOrderPrice } from '../Redux/orderSlice'
 
 export const OrderPage = (props:any) => {
     const dispatch = useDispatch()
-    const [r, serR] = useState(Object.keys(localStorage))
+    const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
     const price = useSelector((state:any)=> state.order.price)
      
     
@@ -97,8 +97,8 @@ export const OrderPage = (props:any) => {
             <Form.Group className='form_order_basket_name' controlId="exampleForm.ControlInput1">
                 <Form.Label>Имя:</Form.Label>
                 <Form.Control onChange={(event:any)=>{
-                    event.target.value.length < 13 ?
-                    setReradeName(event.target.value) : alert("Имя не должно быть больше 12 символов")
+                    event.target.value.length < 15 ?
+                    setReradeName(event.target.value) : alert("Имя не должно быть больше 15 символов")
                     
                     }} type="text" placeholder="Ваше имя" value={reradeName}/>
             </Form.Group>
