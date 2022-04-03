@@ -5,7 +5,8 @@ const sequelize = require('./db')
 const models = require('./models/models')
 const cors = require('cors')
 const router = require('./Routes/routes')
-
+const otherRouter = require('./Routes/otherRoute')
+const cookieParser = require('cookie-parser')
 
 const app = express() 
 const PORT = process.env.PORT || 5000
@@ -13,7 +14,9 @@ const PORT = process.env.PORT || 5000
 app.use(express.static(path.resolve("../" + "/build/frontend")));
 app.use(cors())
 app.use(express.json())
+app.use(cookieParser())
 app.use('/api', router)
+app.use(otherRouter)
 
 // app.get('/', (req, res)=>{
 //     res.sendFile(path.resolve(__dirname , 'index.html'))

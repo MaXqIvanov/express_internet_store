@@ -59,6 +59,11 @@ body {
     margin-right: 20px;
   }
 }
+.price_navigation_block {
+  @media (max-width: 600px) {
+    display: none;
+  }
+}
 .Link {
   text-decoration: none;
   color: white;
@@ -79,6 +84,19 @@ body {
 .main_logo_div {
   margin-left: 20px;
   font-size: 25px;
+  color: white;
+  @media (max-width: 600px) {
+    font-size: 19px;
+  }
+}
+.main_nav_button{
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-toggler-icon{
+  color: white;
 }
 // Body
 .main_div_StorePage {
@@ -132,5 +150,6 @@ body {
   border-radius: 50%;
   cursor: pointer;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center center;
 }

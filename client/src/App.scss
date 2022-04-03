@@ -150,6 +150,7 @@ $main_order-color: white;
   position: absolute;
   top: 50%;
   left: 220px;
+  width: 100px;
   transform: translate(0, -50%);
 
   @media (max-width: 690px) {

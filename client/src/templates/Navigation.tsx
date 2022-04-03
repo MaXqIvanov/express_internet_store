@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { changeCheck } from '../Redux/prodSlice'
 import image from '../images/not_login.svg'
+import { NavBar } from '../components/NavBar'
 
-export const Navigation = () => {
+export const Navigation = (props:any) => {
   const [authNav, setAuthNav] = useState((localStorage.getItem("auth") != null ) ? JSON.parse(String(localStorage.getItem("auth"))) : "")
   
   
@@ -25,12 +26,9 @@ useEffect(() => {
   
 }, [])
 
-  
-
-  
   return (
     <div className='main_div_navigation'>
-        <div className='main_logo_div'>Web Liter.ru</div>
+      <NavBar setTypeGoods={props.setTypeGoods}/>
         <div className='link_price_block'>
            <Link className='Link' to="/">Главная</Link>
            <Link title='Перейти в корзину' className='Link Link_basket' to="/Basket"></Link>

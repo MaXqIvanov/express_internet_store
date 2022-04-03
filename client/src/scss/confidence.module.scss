@@ -9,8 +9,13 @@
 }
 .main_div_wrapper {
   height: 100%;
+  width: 90%;
   @media (max-width: 900px) {
     width: 90%;
+  }
+
+  span {
+    margin-left: 25px;
   }
 }
 .upper {

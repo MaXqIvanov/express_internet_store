@@ -26,7 +26,7 @@ export const StorePage = (props:any) => {
    }
   
   //  Train
- 
+
    
   return (
     <div className='main_div_StorePage_up'>

@@ -5,11 +5,16 @@ const oneProdSlice = createSlice({
     name: "oneProd",
     initialState: {
       index: 1,
+      oneProds: [] as any[],
     },
     reducers: {
         changeStateProods(state, action){
-            state.index = Number(action.payload)
-           
+
+            state.index = action.payload.id
+            state.oneProds = action.payload.elem
+        },
+        stateOneProde(state, action){
+            
         },
     }
 })
@@ -17,5 +22,6 @@ const oneProdSlice = createSlice({
 export default oneProdSlice.reducer
 export const {
     changeStateProods,
+    stateOneProde,
 
 } = oneProdSlice.actions

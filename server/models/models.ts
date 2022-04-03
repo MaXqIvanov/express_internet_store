@@ -6,8 +6,9 @@ const { modelManager } = require('../db')
 export const User = sequelize.define('user',{
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     email: {type: DataTypes.STRING, unique: true,},
-    password: {type: DataTypes.STRING},
+    password: {type: DataTypes.STRING, allowNull: false},
     role: {type: DataTypes.STRING, defaultValue: "USER"},
+    voited: {type: DataTypes.TEXT}
 })
 
 export const interStore = sequelize.define('interStore',{
@@ -16,8 +17,8 @@ export const interStore = sequelize.define('interStore',{
     description: {type: DataTypes.STRING, },
     price: {type: DataTypes.INTEGER, },
     url: {type: DataTypes.STRING},
-    raiting: {type: DataTypes.INTEGER},
-
+    raiting: {type: DataTypes.STRING},
+    type: {type: DataTypes.STRING},
 })
 
 export const Basket = sequelize.define('Basket',{

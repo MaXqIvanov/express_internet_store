@@ -27,7 +27,25 @@ const prodSlice = createSlice({
         },
         changezaglushka(state){
             state.zaglPrice = !state.zaglPrice
+        },
+        changeRaiting(state,action){
+            let elem:any
+            elem = state.prods[0].filter((elems:any)=>
+            elems.id == action.payload.id
+            )
+            let indexNew:any = state.prods[0].map((elem2:any, index:any)=>{
+                
+                if (elem[0].id == elem2.id){
+                    return index
+                } 
+            }).filter((elem:any)=> elem !== undefined)
+           
+            let number:any = indexNew[0]
+            let newElem = {...elem[0], raiting: action.payload.raiting}
+            state.prods[0][number] = newElem
+            
         }
+      
     }
 })
 
@@ -37,4 +55,6 @@ export const {
     changeCheck,
     changeLoading,
     changezaglushka,
+   changeRaiting,
+
 } = prodSlice.actions

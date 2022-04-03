@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { changeStateProods } from '../Redux/oneProdSlice';
-import { changeCheck } from '../Redux/prodSlice';
+import { changeCheck, changeRaiting } from '../Redux/prodSlice';
 
 export const TempsStorePage = (props:any) => {
   const history = useNavigate ()
@@ -15,7 +15,6 @@ export const TempsStorePage = (props:any) => {
     g = {...props.elem, ordered: false}
     localStorage.setItem(props.elem.name, JSON.stringify(g))
   }
-  // console.log("this is just props + " + props.elem.id);
   const [checks, setChecks] = useState<any | null>(0)
   const [nullInfo, setNullInfo] = useState(true)
   useEffect(() => {
@@ -27,12 +26,15 @@ export const TempsStorePage = (props:any) => {
    dispatch(changeCheck(price))
  }
    
+
    
   return (
     <div className='tempStorePage_div'>
       <div title='Узнать подробнее' className='block_1_store_page'><div onClick={()=> {
+        
+        dispatch(changeStateProods({id: props.elem.id, elem : props.elem}))
+        dispatch(changeRaiting({id:props.elem.id, raiting: props.elem.raiting}))
         history('/'+props.elem.id)
-        dispatch(changeStateProods(props.elem.id))
         }} className='img_all_storePage' style={{backgroundImage: `url(${props.elem.url})`}} >
         </div></div>
       {Number(props.elem.id) != Number(checks.id) ?  <Button title='Добавить товар в корзину' onClick={()=>{checker(props)
@@ -46,8 +48,10 @@ export const TempsStorePage = (props:any) => {
       <div className='div_for_price_storePage'>{props.elem.price} ₽</div>
       <div className='div_for_name_storePage'>{props.elem.name}</div>
       <div title="Узнать подробнее о товаре" className='div_storePage_explain'onClick={()=> {
+        
+        dispatch(changeStateProods({id: props.elem.id, elem : props.elem}))
+        dispatch(changeRaiting({id:props.elem.id, raiting: props.elem.raiting}))
         history('/'+props.elem.id)
-        dispatch(changeStateProods(props.elem.id))
         }} >...</div>
     </div>
   )
