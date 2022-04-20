@@ -16,6 +16,10 @@
   width: 90%;
   position: relative;
   display: flex;
+
+  @media(min-width: 1400px){
+    height: 80%;
+  }
 }
 .image_div {
   height: 300px;
@@ -32,6 +36,10 @@
     width: auto;
     min-width: 250px;
   }
+  @media(min-width: 1400px){
+    width: 350px;
+    height: 350px;
+}
 }
 .price {
   position: absolute;
@@ -43,6 +51,9 @@
     left: 50%;
     transform: translate(-50%,0);
     font-size: x-large;
+  }
+  @media(min-width: 1400px){
+      top: 420px;
   }
 }
 
@@ -71,6 +82,12 @@
     top: 420px;
     font-size: large;
   }
+  @media(min-width: 1400px){
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: x-large;
+    top:35px;
+  }
 }
 .name {
   position: absolute;
@@ -93,6 +110,10 @@
     text-align: start;
     font-size: large;
   }
+  @media(min-width: 1400px){
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 .raiting {
   position: absolute;
@@ -114,7 +135,14 @@
     transform: translate(-50%,0);
     top: 670px;
   }
+  @media(min-width: 1400px){
+    top: 330px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: auto;
+  }
 }
+
 .setRaiting {
   position: absolute;
   display: flex;
@@ -129,6 +157,9 @@
     left: 50%;
     transform: translate(-50%,0);
   }
+  @media(min-width: 1400px){
+    top: 350px;
+  }
 }
 .stars {
   font-size: 40px;
@@ -140,6 +171,9 @@
     color: yellow;
     transition: all 0.3s linear;
   }
+  @media(min-width: 1400px){
+    font-size: 50px;
+  }
 }
 .setOneRaiting {
   font-size: 15px;
@@ -148,6 +182,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
+
+  @media(min-width: 1400px){
+    top: 40px;
+    font-size: large;
+  }
 }
 .main{
   height: 100%;
@@ -169,6 +208,9 @@
   }
   @media(max-width:600px){
     margin-top: 120px;
+  }
+  @media(min-width: 1400px){
+    margin-top: -200px;
   }
 }
 .review_crap{
@@ -229,6 +271,9 @@
 .erros{
   width: 80%;
   color: red;
+  @media(min-width: 1400px){
+    font-size: large;
+  }
 }
 .textMessage{
   width: 90%;
@@ -237,6 +282,9 @@
   display: flex;
   word-break: break-all;
   overflow-y: auto;
+  @media(min-width: 1400px){
+    font-size: large;
+  }
 }
 
 .textMessage::-webkit-scrollbar {

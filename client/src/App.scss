@@ -15,6 +15,11 @@ $main_order-color: white;
   width: 250px;
   box-sizing: border-box;
   position: relative;
+
+  @media(min-width: 1400px){
+    height: 380px;
+    width: 350px;
+  }
 }
 
 .img_all_storePage {
@@ -23,17 +28,30 @@ $main_order-color: white;
   background-size: contain;
   background-position: center;
   cursor: pointer;
+
+  @media(min-width: 1400px){
+    height: 230px;
+  }
 }
 .div_for_price_storePage {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translate(-50%, 0);
+
+  @media(min-width: 1400px){
+    font-size: large;
+  }
 }
 .Button_StorePage {
   position: absolute;
   bottom: 0px;
   right: 0px;
+  @media(min-width: 1400px){
+    height: 50px;
+    width: 50px; 
+    font-size: x-large;
+  }
 }
 .main_div_StorePage_up {
   position: relative;
@@ -76,11 +94,19 @@ $main_order-color: white;
   left: 50%;
   top: 70%;
   transform: translate(-50%, -50%);
+
+  @media(min-width: 1400px){
+    font-size: x-large;
+  }
 }
 .main_div_sort{
   display: flex;
   margin-right: 20px;
   float: right;
+
+  @media(min-width: 1400px){
+    font-size: large;
+  }
 }
 .sort_on_price{
   margin-left: 10px;
@@ -104,6 +130,13 @@ $main_order-color: white;
     background: crimson;
     transition: all 0.4s linear;
   }
+
+  @media(min-width: 1400px){
+    font-size: large;
+    height: 35px;
+    width: 160px;
+    bottom: 30px;
+  }
 }
 .Order_label {
   position: fixed;
@@ -121,6 +154,11 @@ $main_order-color: white;
   }
   @media(max-width:600px){
     width: 100%;
+  }
+  @media(min-width:1400px){
+    height: 500px;
+    width: 900px;
+    font-size: large;
   }
 
   .Order_btn_inside {
@@ -140,6 +178,10 @@ $main_order-color: white;
   height: 200px;
   border: solid $main_order-color 1px;
   position: relative;
+
+  @media(min-width: 1400px){
+    height: 220px;
+  }
 }
 .temp_div_img_basketPage {
   position: absolute;
@@ -156,6 +198,11 @@ $main_order-color: white;
     top: 10px;
     transform: translate(0, 0);
   }
+
+  @media(min-width: 1400px){
+    height: 210px;
+    width: 210px;
+  }
 }
 .name_div_basketPage {
   position: absolute;
@@ -171,6 +218,11 @@ $main_order-color: white;
   @media (max-width: 450px) {
     top: 84%;
   }
+
+  @media(min-width: 1400px){
+  left: 240px;
+  font-size: x-large;
+  }
 }
 .price_div_basketPage {
   position: absolute;
@@ -182,6 +234,9 @@ $main_order-color: white;
     top: 94%;
     transform: translate3d(0, 0);
   }
+  @media(min-width: 1400px){
+    font-size: x-large;
+    }
 }
 .btn_delete_basket {
   width: 42px;
@@ -213,6 +268,10 @@ $main_order-color: white;
     overflow-y: scroll;
     left: 165px;
   }
+  @media(min-width: 1400px){
+    left: 400px;
+    font-size: large;
+    }
 }
 
 // TempOrderPage
@@ -361,4 +420,9 @@ $main_order-color: white;
   font-size: xx-large;
 
   z-index: 2;
+}
+.offcanvas-body{
+  @media(min-width: 1400px){
+    font-size: large;
+  }
 }
