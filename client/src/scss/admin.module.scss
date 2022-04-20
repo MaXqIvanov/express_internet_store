@@ -1,0 +1,111 @@
+.main{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h3{
+        cursor: pointer;
+    }
+}
+.crap{
+    height: 500px;
+    width: 300px;
+    border: 1px solid white;
+    text-align: center;
+    position: relative;
+    h3{
+        text-align: center;
+    }
+}
+.Form{
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.span{
+    font-size: 12px;
+}
+
+.navButtons{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%,0);
+
+    .navLeft{
+        margin-right: 20px;
+    }
+    .navRight{
+        margin-left: 20px;
+    }
+    @media(min-width:1000px){
+        top: 20px;
+    }
+}
+.deleteArray{
+    height: 30px;
+    border: 1px solid white;
+    position: relative;
+}
+.allArray{
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.allArray::-webkit-scrollbar {
+    width: 6px; /* ширина scrollbar */
+  }
+  .allArray::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255); /* цвет дорожки */
+    border-radius: 25px;
+  }
+  .allArray::-webkit-scrollbar-thumb {
+    background-color: #b8e5ff; /* цвет плашки */
+    border-radius: 20px; /* закругления плашки */
+    border: 2px solid #b8e5ff; /* padding вокруг плашки */
+  }
+  
+  .allArray::-webkit-scrollbar {
+    width: 6px; /* ширина scrollbar */
+    @media (max-width: 800px) {
+      width: 3px;
+    }
+  }
+  .allArray::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255); /* цвет дорожки */
+    border-radius: 25px;
+  }
+  .allArray::-webkit-scrollbar-thumb {
+    background-color: #ff63dd; /* цвет плашки */
+    border-radius: 20px; /* закругления плашки */
+    border: 3px solid #ff63dd; /* padding вокруг плашки */
+    @media (max-width: 800px) {
+      border: 1px solid #ff63dd;
+    }
+  }
+  .formPage2{
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+  }
+  .nameProodPage2{
+      position: absolute;
+      left: 0;
+  }
+  .closeButton{
+      position: absolute;
+      right: 10px;
+  }
+  .NavHome{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 35px;
+      width: 35px;
+      background-image: url("../images/navHome.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      cursor: pointer;
+  }
