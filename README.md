@@ -20,5 +20,5 @@
 !по следующим контактам:!
 !email: maksivanov35@ya.ru telegram:@WebLiter!
 !Также ознакомиться с моими контактами вы можите на моём сайте!
-!https://web-liter.ru/contacts!
+<a href="https://web-liter.ru/contacts">https://web-liter.ru/contacts</a>
 ```
