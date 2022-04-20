@@ -12,9 +12,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+ 
 }
-.form_a_b{
-    width: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
+.buttons{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }

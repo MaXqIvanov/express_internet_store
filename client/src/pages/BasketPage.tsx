@@ -1,12 +1,14 @@
 
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { TempsBasketPage } from '../components/TempsBasketPage';
 import { OrderPage } from './OrderPage';
 
 export const BasketPage = () => {
-  const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
+  // const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
+  const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem[0] == elem[0].toUpperCase() && elem[0]!= "_"))
   const [orderlabel, setOrderLabel] = useState(false)
- 
+  
   
   return (
     <div className='main_div_basketPage'>

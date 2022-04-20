@@ -8,13 +8,14 @@
   font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   @media (max-width: 780px) {
-    min-height: 120vh;
+    min-height: 100vh;
   }
 }
 .main_div_wrapper {
   height: 96%;
   width: 90%;
   position: relative;
+  display: flex;
 }
 .image_div {
   height: 300px;
@@ -24,6 +25,13 @@
   position: absolute;
   top: 0;
   left: 0;
+
+  @media(max-width:780px){
+    left: 50%;
+    transform: translate(-50%,0);
+    width: auto;
+    min-width: 250px;
+  }
 }
 .price {
   position: absolute;
@@ -32,7 +40,9 @@
   font-size: 5vh;
   transform: translate(-50%, 0);
   @media (max-width: 780px) {
-    left: 85px;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: x-large;
   }
 }
 
@@ -56,8 +66,10 @@
   @media (max-width: 780px) {
     width: 300px;
     text-align: left;
-    left: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
     top: 420px;
+    font-size: large;
   }
 }
 .name {
@@ -75,15 +87,17 @@
   }
   @media (max-width: 780px) {
     top: 400px;
-    left: 10px;
-    width: 300px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: auto;
     text-align: start;
+    font-size: large;
   }
 }
 .raiting {
   position: absolute;
-  left: 440px;
-  top: 55%;
+  left: 430px;
+  top: 300px;
   height: 50px;
   width: 320px;
   display: flex;
@@ -92,9 +106,13 @@
     color: white;
   }
 
+  @media (max-width: 930px) {
+    left: 370px
+  }
   @media (max-width: 780px) {
-    left: 10px;
-    top: 680px;
+    left: 50%;
+    transform: translate(-50%,0);
+    top: 670px;
   }
 }
 .setRaiting {
@@ -107,6 +125,10 @@
 
   top: 300px;
   left: 85px;
+  @media(max-width:780px){
+    left: 50%;
+    transform: translate(-50%,0);
+  }
 }
 .stars {
   font-size: 40px;
@@ -126,4 +148,141 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
+}
+.main{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  
+}
+.review{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-top: -80px;
+  position: relative;
+
+  @media(max-width:800px){
+    margin-top: 120px;
+  }
+  @media(max-width:600px){
+    margin-top: 120px;
+  }
+}
+.review_crap{
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_oneMessage_div{
+  width: 80%;
+}
+.oneMessage{
+  width: 100%;
+  height: 100px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: flex;
+  position: relative;
+}
+.imgPersonMessage{
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background: rgb(255, 255, 255);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  margin-right: 10px;
+
+}
+.review_div{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+.FormSendReview{
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.FormSendReviewCrap{
+  margin-top: 25px;
+  width: 80%;
+  border: 1px solid yellow;
+  display: flex;
+  justify-content: center;
+}
+.messageError{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.erros{
+  width: 80%;
+  color: red;
+}
+.textMessage{
+  width: 90%;
+  min-width: 50vw;
+  height: 65px;
+  display: flex;
+  word-break: break-all;
+  overflow-y: auto;
+}
+
+.textMessage::-webkit-scrollbar {
+  width: 6px; /* ширина scrollbar */
+}
+.textMessage::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* цвет дорожки */
+  border-radius: 25px;
+}
+.textMessage::-webkit-scrollbar-thumb {
+  background-color: #b8e5ff; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 2px solid #b8e5ff; /* padding вокруг плашки */
+}
+
+.textMessage::-webkit-scrollbar {
+  width: 6px; /* ширина scrollbar */
+  @media (max-width: 800px) {
+    width: 4px;
+  }
+}
+.textMessage::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* цвет дорожки */
+  border-radius: 25px;
+}
+.textMessage::-webkit-scrollbar-thumb {
+  background-color: #000000; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 3px solid #006179; /* padding вокруг плашки */
+  @media (max-width: 800px) {
+    border: 1px solid #006179;
+  }
+}
+.AdminRemoveMessage{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+.paginationArray{
+  width: 80%;
+  margin-top: 10px;
 }

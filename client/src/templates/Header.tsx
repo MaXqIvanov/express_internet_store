@@ -5,7 +5,7 @@ import { Navigation } from './Navigation'
 export const Header = (props:any) => {
   return (
     <div className='Header'>
-        <Navigation setTypeGoods={props.setTypeGoods}/>
+        <Navigation setPage={props.setPage} setTypeGoods={props.setTypeGoods}/>
     </div>
   )
 }

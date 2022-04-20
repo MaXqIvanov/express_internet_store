@@ -1,33 +1,53 @@
-import { interStore, User } from './../models/models';
-
+import { Basket, interStore, User } from './../models/models';
+const bcrypt = require('bcryptjs');
 class goodsController{
 
     
 
     async getAll(req:any, res:any){
         try {
-            let {limit, page} = req.query
+            let {limit, page, sort} = req.query
             const {type} = req.params
             page = page || 1
-            limit = limit || 6
+            limit = Number(limit) || 6
             let offset = page * limit - limit 
+            if(String(sort) == "true"){
+                const goods = await interStore.findAndCountAll({limit, offset, order: [
+                    ['price', 'ASC'],
+                ], where:{type:type}})
+              
+                return res.json(goods)
+            }
             const goods = await interStore.findAndCountAll({limit, offset, where:{type:type}})
             return res.json(goods)
+           
         } catch (error:any) {
             return res.json(error.message)   
         }
         
     }
 
-    async getOne(req:any, res:any){
+    async create(req:any, res:any){
         try {
-            const {id} = req.params
-            const device = await interStore.findOne(
+            const {name, description, price, url, type, email, password} = req.body
+            const role = await User.findOne(
                 {
-                    where: {id},
+                    where: {email},
+                    attributes: ['role','password'],
                 }
             )
-            return res.json(device)
+            let bspasswordCheck:any = password && bcrypt.compareSync(password, role.password)
+            if(role.role == 'ADMIN' && bspasswordCheck){
+                const device = await interStore.create({
+                    name, description, price, url, type
+                })
+                return res.json(device)
+            }
+            else if(bspasswordCheck==false){
+                return res.json("Вы ввели не правильный пароль")
+            }
+           
+            return res.json("Вы не обладаите правами доступа")
         } catch (error:any) {
             return res.json(error.message)
             
@@ -80,6 +100,34 @@ class goodsController{
             )
         }
        
+    }
+
+    async deleteOne(req:any, res:any){
+        try {
+            const {id} = req.params
+            const {email, password} = req.body
+            const role = await User.findOne(
+                {
+                    where: {email},
+                    attributes: ['role','password'],
+                }
+            )
+            let bspasswordCheck:any = password && bcrypt.compareSync(password, role.password)
+            if(role.role == 'ADMIN' && bspasswordCheck){
+                const device = await interStore.destroy({
+                    where: {id}
+                })
+                return res.json(device)
+            }
+            else if(bspasswordCheck==false){
+                return res.json({message:"Вы ввели не правильный пароль"})
+            }
+           
+            return res.json({message:"Вы не обладаите правами доступа"})
+
+        } catch (error:any) {
+            return res.json(error.message)   
+        }
     }
 
 

@@ -1,18 +1,16 @@
 
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import { APIOrders } from '../api/api'
 import { TempOrderPage } from '../components/TempOrderPage'
 import { changeOrderPrice, rerenderOrderPrice } from '../Redux/orderSlice'
 
 export const OrderPage = (props:any) => {
     const dispatch = useDispatch()
-    const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
+    const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem[0] == elem[0].toUpperCase() && elem[0]!= "_"))
     const price = useSelector((state:any)=> state.order.price)
-     
-    
-    
+
     const filterOrdered = ()=>{
         serR(r.filter((elem:any)=>
         JSON.parse(String((localStorage.getItem(elem)))).ordered === false 
@@ -34,36 +32,8 @@ export const OrderPage = (props:any) => {
     
   const [reradeName, setReradeName] = useState<string>("")                //инпут для имени
   const [reradeNumber, setReradeNumber] = useState<any>("")              //инпут для номера
-
-  
-    // Train
- 
- 
     let args = [1,2,3,4] 
     const ger = args.reduce((acc, i) => acc += i, 0)/args.length
-   
-    
-    
-    
-    
-
-    // const orderSend = ()=> {
-    //     const rUp = r.map((elem:any, index:any)=>{
-    //         index++;
-    //         let g = JSON.parse(String((localStorage.getItem(elem))))
-    //         let newElem = g
-    //         newElem.ordered = true
-    //         localStorage.setItem(elem, JSON.stringify(newElem))
-    //         elem = index+ '-' + elem
-    //         return elem
-    //     })
-    //     alert("Заказ оформлен")
-    //     axios.post('https://store.web-liter.ru/api/orders', 
-    //     {"name":`${rUp}`,"price":Number(price),"namePerson":reradeName,"telPerson":String(reradeNumber)}
-    //   );
-    //   props.setOrderLabel(!props.orderlabel)
-
-    // }
     const orderSend = ()=> {
       const rUp = r.map((elem:any, index:any)=>{
           index++;
@@ -75,14 +45,9 @@ export const OrderPage = (props:any) => {
           return elem
       })
       alert("Заказ оформлен")
-      axios.post('http://localhost:5000/api/orders', 
-      {"name":`${rUp}`,"price":Number(price),"namePerson":reradeName,"telPerson":String(reradeNumber)}
-    );
+    APIOrders(rUp, price, reradeName, reradeNumber)
     props.setOrderLabel(!props.orderlabel)
-  }
-
-  // train
-  
+  }  
   return (
     <div className='Order_label'>
         <Button onClick={()=>props.setOrderLabel(!props.orderlabel)} variant="outline-info" className='Order_btn_inside'>✘</Button>

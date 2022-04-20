@@ -8,7 +8,9 @@ export const User = sequelize.define('user',{
     email: {type: DataTypes.STRING, unique: true,},
     password: {type: DataTypes.STRING, allowNull: false},
     role: {type: DataTypes.STRING, defaultValue: "USER"},
-    voited: {type: DataTypes.TEXT}
+    voited: {type: DataTypes.TEXT},
+    verification: {type:DataTypes.STRING, allowNull: false},
+    activation: {type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false}
 })
 
 export const interStore = sequelize.define('interStore',{
@@ -40,6 +42,17 @@ export const Orders = sequelize.define('Orders',{
     timeToDeliver: {type: DataTypes.INTEGER, defaultValue: 2},
     namePerson: {type: DataTypes.STRING, allowNull: false},
     telPerson: {type: DataTypes.BIGINT(13), allowNull: false}
+})
+
+export const Messages = sequelize.define('messages',{
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    idProods: {type: DataTypes.INTEGER, allowNull: false},
+    messages: {type: DataTypes.STRING, allowNull: false},
+    imgPerson: {type: DataTypes.STRING, allowNull: true},
+    namePerson: {type: DataTypes.STRING, allowNull:true},
+    email: {type: DataTypes.STRING},
+    role: {type: DataTypes.STRING, defaultValue: "USER"},
+    activation: {type: DataTypes.BOOLEAN, allowNull: true, defaultValue: false}
 })
 
 // Basket.hasMany(interStore)

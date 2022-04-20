@@ -115,3 +115,100 @@
     top: 28px;
   }
 }
+.div_auth{
+  position: absolute;
+  top: 165px;
+  color: rgb(206, 206, 255);
+  left: 50%;
+  transform: translate(-50%,0);
+  cursor: pointer;
+}
+.div_auth2{
+  position: absolute;
+  top: 165px;
+  color: rgb(206, 206, 255);
+  left: 320px;
+  transform: translate(-50%,0);
+  cursor: pointer;
+  @media(max-width:500px){
+    width: 150px;
+    left: 250px;
+  }
+}
+.button_login{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 140px;
+  left: 40px;
+  height: 30px;
+  transform: translate(-50%, 0);
+}
+.authSite{
+  height: 200px;
+  min-height: 200px;
+  width: 100%;
+  min-width: 290px;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 25px;
+  max-width: 550px;
+  box-sizing: border-box;
+}
+.button_registr{
+  position: absolute;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.formGroup{
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%,0);
+  width: 40%;
+
+  @media(max-width:500px){
+    width: 60%;
+  }
+}
+
+.errors{
+  font-size: small;
+}
+.img_hidden{
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 88px;
+  left: 385px;
+  background-image: url('../images/hidden_password.svg');
+  background-size: contain;
+  cursor: pointer;
+  @media(max-width: 500px){
+    left: 310px;
+  }
+}
+.recapcha{
+position: absolute;
+bottom: -130px;
+left: 50%;
+transform: translate(-50%,0);
+visibility: hidden;
+}
+.textCapcha{
+  position: absolute;
+  bottom: -30px;
+  font-size: 8px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}

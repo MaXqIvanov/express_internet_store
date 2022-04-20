@@ -24,7 +24,7 @@ export const TempsBasketPage = (props:any) => {
         onClick={()=>{
           changePrice(Number(props.props.price))
           removeItemStorage(props.props.name)
-          props.serR(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
+          props.serR(Object.keys(localStorage).filter((elem:any)=> elem[0] == elem[0].toUpperCase()  && elem[0]!= "_"))
         }}
         >✘</Button>
     </div>

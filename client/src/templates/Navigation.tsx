@@ -13,7 +13,7 @@ export const Navigation = (props:any) => {
   const dispatch = useDispatch()
   const navAuth =  useNavigate()
   const price = useSelector((state:any)=> state.prod.check )
-  let g = Object.keys(localStorage).filter((elem:any)=> elem!= "auth");
+  let g = Object.keys(localStorage).filter((elem:any)=>  elem[0] == elem[0].toUpperCase() && elem[0]!= "_");
   let e:any[] = []
 
 
@@ -28,7 +28,7 @@ useEffect(() => {
 
   return (
     <div className='main_div_navigation'>
-      <NavBar setTypeGoods={props.setTypeGoods}/>
+      <NavBar setPage={props.setPage}  setTypeGoods={props.setTypeGoods}/>
         <div className='link_price_block'>
            <Link className='Link' to="/">Главная</Link>
            <Link title='Перейти в корзину' className='Link Link_basket' to="/Basket"></Link>

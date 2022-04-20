@@ -13,6 +13,37 @@ body {
   background: #18212b;
   color: white;
 }
+body::-webkit-scrollbar {
+  width: 6px; /* ширина scrollbar */
+}
+body::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* цвет дорожки */
+  border-radius: 25px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #b8e5ff; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 2px solid #b8e5ff; /* padding вокруг плашки */
+}
+
+body::-webkit-scrollbar {
+  width: 6px; /* ширина scrollbar */
+  @media (max-width: 800px) {
+    width: 4px;
+  }
+}
+body::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255); /* цвет дорожки */
+  border-radius: 25px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #000000; /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 3px solid #006179; /* padding вокруг плашки */
+  @media (max-width: 800px) {
+    border: 1px solid #006179;
+  }
+}
 #root {
   height: 100%;
   width: 100%;
@@ -85,8 +116,12 @@ body {
   margin-left: 20px;
   font-size: 25px;
   color: white;
+  cursor: pointer;
   @media (max-width: 600px) {
-    font-size: 19px;
+    font-size: 17px;
+  }
+  @media(max-width: 389px){
+    display: none;
   }
 }
 .main_nav_button{

@@ -1,5 +1,7 @@
 /client/node_modules
 /server/node_modules
+/serverWSS/node_modules
 /.env
 /client/.env
 /server/.env
+/test

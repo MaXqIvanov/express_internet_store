@@ -5,21 +5,26 @@ const goodsController = require('../controllers/goodsController')
 const basketController = require('../controllers/basketController')
 const ordersController = require('../controllers/ordersController')
 const UserController = require('../controllers/UserController')
+const adminController = require('../controllers/adminController')
+const messagesController = require('../controllers/messagesController')
 
-
+const authMiddleware = require('../middleware/authMiddleware')
 // User
-router.get('/users/:id', UserController.getOne)
+router.get('/users/:email', UserController.getOne)
 router.post('/users', UserController.createNew)
 router.post('/users/:id', UserController.setRaitingProod)
-
-
-
+router.get('/activate/:link', UserController.setActivated)
+// Messages
+router.get('/messages/:id', messagesController.getAll)
+router.post('/messages/:id', messagesController.createNewPost)
+router.post('/messages/delete/:id',messagesController.deletePost)
 
 
 // Goods
 router.get('/goods/:type', goodsController.getAll )
-router.get('/goods/:id', goodsController.getOne)
+router.post('/goods', goodsController.create)
 router.post('/goods/:id', goodsController.setRaiting)
+router.post('/goods/delete/:id', goodsController.deleteOne)
 
 
 // Orders
@@ -34,6 +39,8 @@ router.post('/basket', basketController.create)
 router.put('/basket/:id', basketController.updates)
 router.delete('/basket/:id', basketController.removes)
 
+//ADMIN_PANEL
+router.post('/admin/:id',authMiddleware, adminController.getAll)
 
 
 

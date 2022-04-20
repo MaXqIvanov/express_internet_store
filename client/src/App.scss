@@ -37,6 +37,7 @@ $main_order-color: white;
 }
 .main_div_StorePage_up {
   position: relative;
+  padding-bottom: 20px;
 }
 .Pagination {
   position: absolute;
@@ -76,7 +77,14 @@ $main_order-color: white;
   top: 70%;
   transform: translate(-50%, -50%);
 }
-
+.main_div_sort{
+  display: flex;
+  margin-right: 20px;
+  float: right;
+}
+.sort_on_price{
+  margin-left: 10px;
+}
 // BasketPage
 .main_div_basketPage {
   position: relative;
@@ -110,6 +118,9 @@ $main_order-color: white;
   color: $main_order-color;
   @media (max-width: 800px) {
     width: 90%;
+  }
+  @media(max-width:600px){
+    width: 100%;
   }
 
   .Order_btn_inside {
@@ -179,6 +190,13 @@ $main_order-color: white;
   top: 5px;
   right: 5px;
   border-radius: 50%;
+  @media(max-width:500px){
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .description_div_basketPage {
   width: 300px;
@@ -249,8 +267,8 @@ $main_order-color: white;
   width: 200px;
 
   @media (max-width: 600px) {
-    left: 50px;
-    bottom: 100px;
+    left: 10px;
+    bottom: 90px;
   }
 }
 .form_order_basket_name {
@@ -259,6 +277,10 @@ $main_order-color: white;
   left: 50px;
   margin-top: 4px;
   width: 200px;
+  @media (max-width: 600px) {
+    left: 10px;
+    bottom: 10px;
+  }
 }
 .Button_oder_basket {
   position: absolute;
@@ -266,6 +288,10 @@ $main_order-color: white;
   right: 20px;
   z-index: 2;
   background: #004855;
+  @media(max-width:600px){
+    bottom: 10px;
+    right: 15px;
+  }
 }
 .price_order_basket {
   position: absolute;

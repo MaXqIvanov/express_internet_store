@@ -21,7 +21,7 @@ export const NavBar = (props:any) => {
         <Navbar collapseOnSelect  variant="dark"   expand={false}>
         <Container fluid>
         <Navbar.Toggle   className='main_nav_button' aria-controls="offcanvasNavbar" />
-          <Navbar.Brand className='main_logo_div'  href="/">Web Liter.ru</Navbar.Brand>
+          <Navbar.Brand className='main_logo_div'  onClick={()=>navHome("/")}>Web Liter.ru</Navbar.Brand>
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
@@ -34,8 +34,10 @@ export const NavBar = (props:any) => {
             <Offcanvas.Body >
               <Nav className="justify-content-end flex-grow-1 pe-3">
                   {positionsSearch.length >= 1 ? positionsSearch.map((elem:any, index:any)=><Nav.Link data-bs-dismiss="offcanvas" key={index} href="#"  style={{color: "black"}}  onClick={()=>{
+                      props.setPage(1)
                       props.setTypeGoods(Object.values(elem)[0]) 
                 navHome("/")}}>{ Object.keys(elem)[0]} </Nav.Link>):positions.map((elem:any, index:any)=><Nav.Link key={index} href="#"  style={{color: "black"}}   onClick={()=>{
+                  props.setPage(1)
                   props.setTypeGoods(Object.values(elem)[0]) 
             navHome("/")}}>{ Object.keys(elem)[0]} </Nav.Link>)}
               </Nav>

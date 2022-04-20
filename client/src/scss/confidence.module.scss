@@ -19,19 +19,21 @@
   }
 }
 .upper {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   text-align: center;
-  font-size: 25px;
-  border: 1px solid white;
+  font-size: 32px;
   cursor: pointer;
-
-  a {
+  background-image: url('../images/arrow_top.svg');
+ 
     text-decoration: none;
     color: white;
-  }
+ background-repeat: no-repeat;
+    &:hover{
+      color: rgb(255, 255, 255);
+    }
 }

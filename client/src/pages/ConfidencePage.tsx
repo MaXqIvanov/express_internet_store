@@ -131,7 +131,7 @@ export const ConfidencePage = () => {
 
 
 
-            <div  className={s.upper}><a  href="#top">↑</a></div>
+           <a className={s.upper} href="#top"></a>
         
         </div>
     </div>
