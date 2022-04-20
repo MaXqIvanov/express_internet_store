@@ -22,4 +22,5 @@
 !Также ознакомиться с моими контактами вы можите на моём сайте!
 ```
 
-<a href="https://web-liter.ru/contacts">https://web-liter.ru/contacts</a>
+<a href="https://store.web-liter.ru/">Ссылка на проект</a>
+<a href="https://web-liter.ru/contacts">Контакты</a>
