@@ -5,5 +5,11 @@
 ! В нём реализованы следующие технологии:
 ! Frontend: React.js (TypeScript), Redux - toolkit(slice)
 ! Backend: Express(TypeScript)
-! Other: scss, axios
+! Other: scss, axios, google-Recapcha, Auth-Google, Auth-Vk
+```
+
+```diff
+@@ Помимо этого реализована Admin panel:   (and bold)@@
+@@ Доступна реализация добавления нового товара  (and bold)@@
+@@ Удаление товара и возможно добавление аналогичного функционала  (and bold)@@
 ```
