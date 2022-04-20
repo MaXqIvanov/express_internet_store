@@ -3,6 +3,7 @@
 ! Он представляет собой базовую концепцию интернет магазина
 ```
 
+<p style='color:red'>This is some red text.</p>
 <div>В нём реализованы следующие технологии:</div>
 <br></br>
 <div>Frontend: React.js (TypeScript), Redux - toolkit(slice)</div>
