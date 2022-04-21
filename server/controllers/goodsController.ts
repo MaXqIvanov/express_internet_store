@@ -6,11 +6,21 @@ class goodsController{
 
     async getAll(req:any, res:any){
         try {
-            let {limit, page, sort} = req.query
+            let {limit, page, sort,name} = req.query
             const {type} = req.params
             page = page || 1
             limit = Number(limit) || 6
             let offset = page * limit - limit 
+            // Delpoy PHP !!
+            if(name){
+                const goods = await interStore.findOne(
+                    {
+                        where: {name}
+                    }
+                )
+                let rows = {"count": 1, "rows":[goods]}
+                return res.json(rows);
+            }
             if(String(sort) == "true"){
                 const goods = await interStore.findAndCountAll({limit, offset, order: [
                     ['price', 'ASC'],

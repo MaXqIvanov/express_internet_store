@@ -197,6 +197,8 @@ $main_order-color: white;
     height: 140px;
     top: 10px;
     transform: translate(0, 0);
+    max-width: 140px;
+    left: 10px;
   }
 
   @media(min-width: 1400px){
@@ -217,6 +219,9 @@ $main_order-color: white;
   }
   @media (max-width: 450px) {
     top: 84%;
+    left: 0px;
+    width: 160px;
+    text-align: center;
   }
 
   @media(min-width: 1400px){
@@ -425,4 +430,11 @@ $main_order-color: white;
   @media(min-width: 1400px){
     font-size: large;
   }
+}
+.main_div_setName{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  visibility: hidden;
 }

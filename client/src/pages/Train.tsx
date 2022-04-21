@@ -9,7 +9,10 @@ import s from '../scss/train/Train.module.scss'
 
 export const Train = () => {
  
-
+  const isUnique=(anyStroke:any)=>{
+    
+  }
+   console.log(isUnique("heelll"));
    
   
   return (

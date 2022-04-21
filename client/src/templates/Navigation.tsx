@@ -28,7 +28,7 @@ useEffect(() => {
 
   return (
     <div className='main_div_navigation'>
-      <NavBar setPage={props.setPage}  setTypeGoods={props.setTypeGoods}/>
+      <NavBar setPage={props.setPage} setName={props.setName}  setTypeGoods={props.setTypeGoods}/>
         <div className='link_price_block'>
            <Link className='Link' to="/">Главная</Link>
            <Link title='Перейти в корзину' className='Link Link_basket' to="/Basket"></Link>

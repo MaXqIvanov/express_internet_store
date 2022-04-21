@@ -30,6 +30,7 @@ export const StorePage = (props:any) => {
    }
   
    const isParams = ()=>{
+     props.setName("")
     props.setSort.setSortPrice(!props.setSort.sortPrice)
    }
 
@@ -45,6 +46,7 @@ export const StorePage = (props:any) => {
    
   return (
     <div className='main_div_StorePage_up'>
+      <div className='main_div_setName' onClick={()=> props.setName("Samsung")}>+</div>
       <div className='main_div_sort'>Сортировка по: <div className='sort_on_price'> <Form>
             <Form.Check 
               type="switch"

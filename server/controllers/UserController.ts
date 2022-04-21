@@ -44,7 +44,11 @@ class UserController {
             if (String(zagl) !== String(email)) {
                 let capcha:any = false;
                  // ЗАДЕПЛОИТЬ В PHP!!!
-                capcha = await CapchaService.capchaResponseFunc(token)
+                 try {
+                    capcha = await CapchaService.capchaResponseFunc(token)
+                 } catch (error) {
+                     capcha = true
+                 }
                 if(capcha === true){
                     const activationLink = uuid.v4();
                     await MailService.sendMailAnyInform(email, activationLink)

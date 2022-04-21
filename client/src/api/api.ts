@@ -3,8 +3,8 @@ import { changeRolePerson } from "../Redux/admin/rolePersonSlice";
 import { addProd, changeLoading, changeRaiting } from "../Redux/prodSlice";
 
 // Api LocalHost
-export const apiGetGoods = (typeGoods:string, page:number, sortPrice:boolean, limit:number, setPageCount:any, dispatch:any):void=>{
-    axios.get(`http://127.0.0.1:5000/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`).then((response: any) => {
+export const apiGetGoods = (typeGoods:string, page:number, sortPrice:boolean, limit:number, setPageCount:any, dispatch:any, name:string):void=>{
+    axios.get(`http://127.0.0.1:5000/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&name=${name}`).then((response: any) => {
         dispatch(addProd(response.data.rows))
         setPageCount(Math.ceil(response.data.count/limit))
         }).then(()=> dispatch(changeLoading(false))

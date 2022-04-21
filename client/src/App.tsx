@@ -37,10 +37,11 @@ function App() {
   const [pageCount, setPageCount] = useState<number>(3)
   const [typeGoods, setTypeGoods] = useState<string>(trueTypeGoods)
   const [sortPrice, setSortPrice] = useState<boolean>(trueSort)
+  const [name,setName] = useState<string>("")
  
   useEffect(() => {
-    apiGetGoods(typeGoods,page,sortPrice,limit,setPageCount,dispatch )
-  }, [page, typeGoods, sortPrice])
+    apiGetGoods(typeGoods,page,sortPrice,limit,setPageCount,dispatch,name)
+  }, [page, typeGoods, sortPrice, name])
 
 
   const index = useSelector((state:any) => state.oneProd.index)
@@ -51,9 +52,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-                <Route path="/" element={<div className='maid_div_page2'><Header setPage={setPage}  setTypeGoods={setTypeGoods}/> <StorePage setSort={{setSortPrice:setSortPrice, sortPrice:sortPrice}} sortPrice={sortPrice} typeGoods={typeGoods} pageCount={pageCount} page={page} setPage={setPage}/> <Footer /></div>} />
-                <Route path="/basket" element={<div className='maid_div_page2'><Header setPage={setPage}  setTypeGoods={setTypeGoods}/> <BasketPage /> <Footer /></div>} />
-                <Route path="/confidentiality" element={<div className='maid_div_page2'><Header setPage={setPage}  setTypeGoods={setTypeGoods}/><ConfidencePage /></div>} />
+                <Route path="/" element={<div className='maid_div_page2'><Header setPage={setPage} setName={setName}  setTypeGoods={setTypeGoods}/> <StorePage setSort={{setSortPrice:setSortPrice, sortPrice:sortPrice}} sortPrice={sortPrice} typeGoods={typeGoods} pageCount={pageCount} page={page} setPage={setPage} setName={setName}/> <Footer /></div>} />
+                <Route path="/basket" element={<div className='maid_div_page2'><Header setPage={setPage} setName={setName}  setTypeGoods={setTypeGoods}/> <BasketPage /> <Footer /></div>} />
+                <Route path="/confidentiality" element={<div className='maid_div_page2'><Header setPage={setPage} setName={setName}  setTypeGoods={setTypeGoods}/><ConfidencePage /></div>} />
                 <Route path="/auth" element={<div className='maid_div_page2'><Auth /></div>} />
                 <Route path="/:id/" element={<div className='maid_div_page2'><Header setPage={setPage} setTypeGoods={setTypeGoods}/><OneProodsPage index={index}/> <Footer /></div>} />
                 <Route path="/train" element={<Suspense fallback={<Spinner animation="grow" />}><div className='maid_div_page2'><Train /></div></Suspense>} />
