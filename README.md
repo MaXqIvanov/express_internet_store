@@ -4,7 +4,7 @@
 
 ### `В нём реализованы следующие технологии:`
 
-### `Frontend: React.js (TypeScript), Redux - toolkit(slice)`
+`Frontend: React.js (TypeScript), Redux - toolkit(slice)`
 
 ### `Backend: Express(TypeScript)`
 
