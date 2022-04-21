@@ -1,10 +1,13 @@
 
 import React, { useEffect, useState } from 'react'
 import { Navbar,Container,Offcanvas,Nav,NavDropdown,Form,Button,FormControl } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import T from 'i18n-react';
 
 export const NavBar = (props:any) => {
-    const [visible, setVisible] = useState(true)
+  
+    const [visible, setVisible] = useState(true)    
     const navHome = useNavigate()
     const positions = [{'Телефоны':'phone'}, {'Ноутбуки':'laptope'}]
     const [search, setSearch] = useState("")
@@ -36,7 +39,8 @@ export const NavBar = (props:any) => {
                   {positionsSearch.length >= 1 ? positionsSearch.map((elem:any, index:any)=><Nav.Link data-bs-dismiss="offcanvas" key={index} href="#"  style={{color: "black"}}  onClick={()=>{
                       props.setPage(1)
                       props.setTypeGoods(Object.values(elem)[0]) 
-                navHome("/")}}>{ Object.keys(elem)[0]} </Nav.Link>):positions.map((elem:any, index:any)=><Nav.Link key={index} href="#"  style={{color: "black"}}   onClick={()=>{
+                navHome("/")}}>{ Object.keys(elem)[0]} </Nav.Link>)
+                :positions.map((elem:any, index:any)=><Nav.Link key={index} href="#"  style={{color: "black"}}   onClick={()=>{
                   props.setPage(1)
                   props.setTypeGoods(Object.values(elem)[0]) 
             navHome("/")}}>{ Object.keys(elem)[0]} </Nav.Link>)}

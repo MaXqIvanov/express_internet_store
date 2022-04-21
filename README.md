@@ -24,3 +24,7 @@
 
 <a href="https://store.web-liter.ru/">Ссылка на проект</a> ||
 <a href="https://web-liter.ru/contacts">Контакты</a>
+
+### `npm run eject`
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+fdsadsa) `#f03c15`
