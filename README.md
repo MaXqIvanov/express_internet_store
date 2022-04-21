@@ -3,27 +3,19 @@
 ### `Он представляет собой базовую концепцию интернет магазина`
 
 `•В нём реализованы следующие технологии:`<br>
-`•Frontend: React.js (TypeScript), Redux - toolkit(slice)`
-`•Backend: Express(TypeScript)`
-`•Other: scss, axios, google-Recapcha, Auth-Google, Auth-Vk`
-
-```diff
-! Помимо этого реализована Admin panel:   (and bold)!
-! Доступна реализация добавления нового товара  (and bold)!
-! Удаление товара(and bold)!
-! Также возможно добавление любого функционала  (and bold) !
-```
-
-```diff
-!По различным вопросам можете обращаться ко мне!
-!по следующим контактам:!
-!email: maksivanov35@ya.ru telegram:@WebLiter!
-!Также ознакомиться с моими контактами вы можите на моём сайте!
-```
+`•Frontend: React.js (TypeScript), Redux - toolkit(slice)`<br>
+`•Backend: Express(TypeScript)`<br>
+`•Other: scss, axios, google-Recapcha, Auth-Google, Auth-Vk`<br>
+` ` <br>
+`•Помимо этого реализована Admin panel: `<br>
+`Доступна реализация добавления нового товара `<br>
+`Удаление товара`<br>
+`Также возможно добавление любого функционала`<br>
+` `<br>
+`По различным вопросам можете обращаться ко мне`
+`по следующим контактам:`
+`email: maksivanov35@ya.ru telegram:@WebLiter`
+`Также ознакомиться с моими контактами вы можите на моём сайте`
 
 <a href="https://store.web-liter.ru/">Ссылка на проект</a> ||
 <a href="https://web-liter.ru/contacts">Контакты</a>
-
-### `npm run eject`
-
-## `npm run eject`
