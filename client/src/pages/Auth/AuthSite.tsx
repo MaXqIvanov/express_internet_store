@@ -9,9 +9,9 @@ import ReCAPTCHA from "react-google-recaptcha"
 
 export const AuthSite = (props:any) => {
     const nav = useNavigate()
-    const [isRegistr, setIsRegistr] = useState(false)
-    const [registerSite, setRegisterSite] = useState(true)
-    const [visiblePass, setVisiblePass] = useState<any>('password')
+    const [isRegistr, setIsRegistr] = useState<boolean>(false)
+    const [registerSite, setRegisterSite] = useState<boolean>(true)
+    const [visiblePass, setVisiblePass] = useState<string>('password')
     const { 
         register, formState: { errors, isValid }, handleSubmit, reset,
       } = useForm({

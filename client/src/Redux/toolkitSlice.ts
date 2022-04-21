@@ -4,8 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const toolkitSlice = createSlice({
     name: "toolkit",
     initialState: {
-        count: 0,
-        todos: ['g', 'v', 'w']
+        count: 0 as number,
+        todos: ['g', 'v', 'w'] as any[],
     },
     reducers: {
         increment(state){

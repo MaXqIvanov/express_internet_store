@@ -11,12 +11,12 @@ export const TempsStorePage = (props:any) => {
   const dispatch = useDispatch()
   
   const checker = (props:any)=>{
-    let g = props.elem
+    let g:any = props.elem
     g = {...props.elem, ordered: false}
     localStorage.setItem(props.elem.name, JSON.stringify(g))
   }
   const [checks, setChecks] = useState<any | null>(0)
-  const [nullInfo, setNullInfo] = useState(true)
+  const [nullInfo, setNullInfo] = useState<boolean>(true)
   useEffect(() => {
     setChecks(((localStorage.getItem(props.elem.name) != null ) ? JSON.parse(String(localStorage.getItem(props.elem.name))) : ""))
   }, [nullInfo])

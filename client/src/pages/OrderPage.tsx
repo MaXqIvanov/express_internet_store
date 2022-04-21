@@ -9,7 +9,7 @@ import { changeOrderPrice, rerenderOrderPrice } from '../Redux/orderSlice'
 export const OrderPage = (props:any) => {
     const dispatch = useDispatch()
     const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem[0] == elem[0].toUpperCase() && elem[0]!= "_"))
-    const price = useSelector((state:any)=> state.order.price)
+    const price:any = useSelector((state:any)=> state.order.price)
 
     const filterOrdered = ()=>{
         serR(r.filter((elem:any)=>
@@ -32,8 +32,8 @@ export const OrderPage = (props:any) => {
     
   const [reradeName, setReradeName] = useState<string>("")                //инпут для имени
   const [reradeNumber, setReradeNumber] = useState<any>("")              //инпут для номера
-    let args = [1,2,3,4] 
-    const ger = args.reduce((acc, i) => acc += i, 0)/args.length
+    let args:number[] = [1,2,3,4] 
+    const ger:number = args.reduce((acc, i) => acc += i, 0)/args.length
     const orderSend = ()=> {
       const rUp = r.map((elem:any, index:any)=>{
           index++;

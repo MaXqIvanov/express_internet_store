@@ -23,17 +23,17 @@ export const OneProodsPage = (props:any) => {
       } = useForm({
         mode: "onChange"
       });
-    const [rerander, setRerander] = useState(false)
-    const [messages, setMessages]= useState<any>([])
+    const [rerander, setRerander] = useState<boolean>(false)
+    const [messages, setMessages]= useState<any[]>([])
     const [countMessage, setCountMessages]=useState<any>(1)
     const [active, setActive]= useState(1)
     let newAuth:any = JSON.parse(String(localStorage.getItem("auth")))
     const reNav = useNavigate()
     const dispatch = useDispatch()
-    let raits = [1,2,3,4,5]    
-    const item = useSelector((state:any)=> state.oneProd.oneProds)
-    let arrayRaiting = String(item.raiting).split(",")
-    let averageRaiting:any = (arrayRaiting.reduce((total:any, elem:any)=> total+Number(elem),0)/arrayRaiting.length).toFixed(1)
+    let raits:any[] = [1,2,3,4,5]    
+    const item:any = useSelector((state:any)=> state.oneProd.oneProds)
+    let arrayRaiting:string[] = String(item.raiting).split(",")
+    let averageRaiting:string = (arrayRaiting.reduce((total:any, elem:any)=> total+Number(elem),0)/arrayRaiting.length).toFixed(1)
     
     if(item.length == 0){
       reNav("/")
@@ -88,9 +88,9 @@ export const OneProodsPage = (props:any) => {
 
     
     
-    let items = [];
+    let items:any[] = [];
     let pages:number = Math.ceil(countMessage/10)
-    for (let number = 1; number <= pages; number++) {
+    for (let number:number = 1; number <= pages; number++) {
       items.push(
         <Pagination.Item onClick={()=>setActive(number)} key={number} active={number === active}>
           {number}

@@ -6,9 +6,9 @@ const prodSlice = createSlice({
     name: "prod",
     initialState: {
         prods: [] as any[],
-        check: 0,
-        loading: true,
-        zaglPrice: true,
+        check: 0 as number,
+        loading: true as boolean,
+        zaglPrice: true as boolean,
     },
     reducers: {
         addProd(state, action){

@@ -7,18 +7,18 @@ import { AdminGetAllProods, AdminRemoveProods } from '../../api/api'
 import s from '../../scss/admin.module.scss'
 
 export const AdminPaneldelete = () => {
-    const zagl = [1,2,3,4,5]
-    const [allprods, setAllProods] = useState<any>([])
-    const [type, setType] = useState<any>('phone')
+    const zagl:number[] = [1,2,3,4,5]
+    const [allprods, setAllProods] = useState<any[]>([])
+    const [type, setType] = useState<string>('phone')
     useEffect(() => {
         AdminGetAllProods(type, setAllProods)
     }, [type])
 
     const removeITem = (data:any)=>{
-        let auth:any = ((localStorage.getItem('auth') != null ) ? JSON.parse(String(localStorage.getItem('auth'))) : "")
-        let password = prompt("Введите пароль")
+        let auth:string = ((localStorage.getItem('auth') != null ) ? JSON.parse(String(localStorage.getItem('auth'))) : "")
+        let password:any = prompt("Введите пароль")
         AdminRemoveProods(password, auth, data)
-        let newallprods = allprods.filter((elem:any)=> elem.id !== data.id)
+        let newallprods:any = allprods.filter((elem:any)=> elem.id !== data.id)
         setAllProods(newallprods)
     }
     

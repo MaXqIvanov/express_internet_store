@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const orderSlice = createSlice({
     name: "order",
     initialState: {
-      price: 0,
+      price: 0 as number,
     },
     reducers: {
         changeOrderPrice(state, action){

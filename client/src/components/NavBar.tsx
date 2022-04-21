@@ -7,10 +7,10 @@ import T from 'i18n-react';
 
 export const NavBar = (props:any) => {
   
-    const [visible, setVisible] = useState(true)    
+    const [visible, setVisible] = useState<boolean>(true)    
     const navHome = useNavigate()
-    const positions = [{'Телефоны':'phone'}, {'Ноутбуки':'laptope'}]
-    const [search, setSearch] = useState("")
+    const positions:any[] = [{'Телефоны':'phone'}, {'Ноутбуки':'laptope'}]
+    const [search, setSearch] = useState<string>("")
     const [positionsSearch, setPositionSearch] = useState<any>([])
     useEffect(() => {
         setPositionSearch(positions.filter((elem:any)=>

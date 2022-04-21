@@ -34,9 +34,9 @@ function App() {
 
   const dispatch = useDispatch()
   const [page,setPage] = useState<number>(truePage)
-  const [pageCount, setPageCount] = useState(3)
-  const [typeGoods, setTypeGoods] = useState(trueTypeGoods)
-  const [sortPrice, setSortPrice] = useState(trueSort)
+  const [pageCount, setPageCount] = useState<number>(3)
+  const [typeGoods, setTypeGoods] = useState<string>(trueTypeGoods)
+  const [sortPrice, setSortPrice] = useState<boolean>(trueSort)
  
   useEffect(() => {
     apiGetGoods(typeGoods,page,sortPrice,limit,setPageCount,dispatch )

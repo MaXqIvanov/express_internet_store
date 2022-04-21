@@ -11,12 +11,12 @@ import { changeCurrentPage } from '../Redux/anyAtributesSlice'
 export const StorePage = (props:any) => {
     const dispatch = useDispatch()   
     const nav = useNavigate() 
-    const zagl = [0,1,2,3,4]
-   const prods = useSelector((state:any)=> state.prod.prods[0])
-   const loading = useSelector((state:any)=> state.prod.loading)
-   const currentPage = useSelector((state:any)=>state.anyAtributes.currentPage)
+    const zagl:number[] = [0,1,2,3,4]
+   const prods:any = useSelector((state:any)=> state.prod.prods[0])
+   const loading:boolean = useSelector((state:any)=> state.prod.loading)
+   const currentPage:number = useSelector((state:any)=>state.anyAtributes.currentPage)
 
-   const [active, setActive] = useState(props.page)
+   const [active, setActive] = useState<number>(props.page)
    let items = [];
    for (let number = 1; number <= props.pageCount; number++) {
      items.push(
