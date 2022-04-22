@@ -1,11 +1,15 @@
 import axios from "axios";
 import { changeRolePerson } from "../Redux/admin/rolePersonSlice";
+import { changeErrors } from "../Redux/errorSlice";
 import { addProd, changeLoading, changeRaiting } from "../Redux/prodSlice";
 
 // Api LocalHost
 export const apiGetGoods = (typeGoods:string, page:number, sortPrice:boolean, limit:number, setPageCount:any, dispatch:any, name:string):void=>{
     axios.get(`http://127.0.0.1:5000/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&name=${name}`).then((response: any) => {
         dispatch(addProd(response.data.rows))
+        if(response.data.message){
+          dispatch(changeErrors(response.data.message))
+        }else { dispatch(changeErrors(""))}    
         setPageCount(Math.ceil(response.data.count/limit))
         }).then(()=> dispatch(changeLoading(false))
         );
@@ -150,7 +154,7 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 
 //LARAVEL - PHP FUNC - LOCALHOST
 // export const apiGetGoods = (typeGoods:any, page:any, sortPrice:any, limit:any, setPageCount:any, dispatch:any)=>{
-//   axios.get(`http://127.0.0.1:5000/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`).then((response: any) => {
+//   axios.get(`http://127.0.0.1:5000/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&name=${name}`).then((response: any) => {
 
 
 //     dispatch(addProd(response.data.data))
@@ -300,7 +304,7 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 // //
 // //LARAVEL - PHP FUNC - LOCALHOST
 // export const apiGetGoods = (typeGoods:any, page:any, sortPrice:any, limit:any, setPageCount:any, dispatch:any)=>{
-// axios.get(`https://store.web-liter.ru/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&limit=${limit}`).then((response: any) => {
+// axios.get(`https://store.web-liter.ru/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&limit=${limit}`+`&name=${name}`).then((response: any) => {
   
 //   dispatch(addProd(response.data.data))
 //   setPageCount(Math.ceil(response.data.total/limit))

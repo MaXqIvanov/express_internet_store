@@ -1,12 +1,11 @@
 
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTodo, decrement, increment } from '../Redux/toolkitSlice'
 import { TempsStorePage } from '../components/TempsStorePage'
-import { Form, Pagination, Spinner } from 'react-bootstrap'
+import { Button, Form, Pagination, Spinner } from 'react-bootstrap'
 import { changeLoading } from '../Redux/prodSlice'
 import { useNavigate } from 'react-router-dom'
-import { changeCurrentPage } from '../Redux/anyAtributesSlice'
+import {useForm} from 'react-hook-form'
 
 export const StorePage = (props:any) => {
     const dispatch = useDispatch()   
@@ -15,7 +14,8 @@ export const StorePage = (props:any) => {
    const prods:any = useSelector((state:any)=> state.prod.prods[0])
    const loading:boolean = useSelector((state:any)=> state.prod.loading)
    const currentPage:number = useSelector((state:any)=>state.anyAtributes.currentPage)
-
+   const newErrors:string = useSelector((state:any)=>state.errors.errors )
+  
    const [active, setActive] = useState<number>(props.page)
    let items = [];
    for (let number = 1; number <= props.pageCount; number++) {
@@ -43,10 +43,38 @@ export const StorePage = (props:any) => {
   }, [props.page, props.typeGoods, props.sortPrice])
   //  Train
 
-   
+  const { 
+    register,
+    formState: {
+    errors
+    },
+    handleSubmit,
+  } = useForm({
+mode: "onSubmit"
+});
+   const searchProds = (data:any)=>{
+    props.setName(data.search)
+   }
+
+
+
   return (
     <div className='main_div_StorePage_up'>
-      <div className='main_div_setName' onClick={()=> props.setName("Samsung")}>+</div>
+      <Form onSubmit={handleSubmit(searchProds)} className='main_div_setName' >
+      <Form.Control {...register('search',{
+        minLength: {
+          value:2 ,
+          message: 'минимальная длина 2 символа'
+                     },
+        maxLength: {
+          value: 22,
+          message: 'длина превышает допустимую'
+        }
+      })} size="sm" type="text" placeholder="поиск..." />
+      <Button type='submit' variant="outline-dark" className="ButtonSearch"></Button>
+      {errors?.search ? <div className='errorsMessage'>{errors.search.message}</div> : <></>}
+     </Form>
+    
       <div className='main_div_sort'>Сортировка по: <div className='sort_on_price'> <Form>
             <Form.Check 
               type="switch"
@@ -63,7 +91,10 @@ export const StorePage = (props:any) => {
           <div className='any_div' key={elem.id}>
               <TempsStorePage elem={elem}/>
           </div>
-          ): <div></div>
+          ): <div className='main_divErrors'>
+            <div className='newErrorsStorePage'></div>
+            <div className={'newErrorsMessage'}>{newErrors}</div>
+          </div>
           }
           
       </div>

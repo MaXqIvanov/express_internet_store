@@ -5,6 +5,7 @@ import oneProdSlice from "./oneProdSlice";
 import orderSlice from "./orderSlice";
 import prodSlice from "./prodSlice";
 import toolkitSlice from "./toolkitSlice";
+import errorsSlice from "./errorSlice";
 
 const rootReducer = combineReducers({
     toolkit: toolkitSlice,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     oneProd: oneProdSlice,
     anyAtributes: anyAtributesSlice,
     role: rolePersonSlice,
+    errors: errorsSlice,
 })
 
 export const store = configureStore({

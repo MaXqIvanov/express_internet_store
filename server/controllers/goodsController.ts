@@ -1,4 +1,5 @@
 import { Basket, interStore, User } from './../models/models';
+const { Op } = require("sequelize");
 const bcrypt = require('bcryptjs');
 class goodsController{
 
@@ -13,13 +14,22 @@ class goodsController{
             let offset = page * limit - limit 
             // Delpoy PHP !!
             if(name){
-                const goods = await interStore.findOne(
-                    {
-                        where: {name}
+                const goods = await interStore.findAndCountAll(
+                    {limit, offset,
+                        where: {
+                              'name': { [Op.like]: '%' + name + '%' } ,
+                          },
                     }
                 )
-                let rows = {"count": 1, "rows":[goods]}
-                return res.json(rows);
+                // let rows = {"count": 1, "rows":[goods]}
+                if(!goods){
+                    return res.json({"message": "Товара с таким именем не существует"})
+                }
+                if(goods.rows[0] == null){
+                    return res.json({"message": "Товара с таким именем не существует"});
+                }
+                
+                return res.json(goods);
             }
             if(String(sort) == "true"){
                 const goods = await interStore.findAndCountAll({limit, offset, order: [
