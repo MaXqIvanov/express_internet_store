@@ -159,24 +159,6 @@ body::-webkit-scrollbar-thumb {
     padding-bottom: 20px;
   }
 }
-// Footer
-.Footer_div {
-  padding-bottom: 22px;
-  margin-top: 20px;
-  height: 20px;
-  font-size: small;
-  width: 100%;
-  border-top: 1px solid white;
-
-  p {
-    cursor: pointer;
-  }
-
-  @media (max-width: 900px) {
-    padding-left: 30px;
-  }
-}
-
 .g-signin2 {
   position: absolute;
   top: 5px;

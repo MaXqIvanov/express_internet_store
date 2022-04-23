@@ -9,10 +9,11 @@ import s from '../scss/train/Train.module.scss'
 
 export const Train = () => {
  
-  const isUnique=(anyStroke:any)=>{
+  const flatten=(array:any)=>{
     
+   
   }
-   console.log(isUnique("heelll"));
+   console.log(flatten("12"));
    
   
   return (

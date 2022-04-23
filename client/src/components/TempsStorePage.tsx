@@ -37,13 +37,13 @@ export const TempsStorePage = (props:any) => {
         history('/'+props.elem.id)
         }} className='img_all_storePage' style={{backgroundImage: `url(${props.elem.url})`}} >
         </div></div>
-      {Number(props.elem.id) != Number(checks.id) ?  <Button title='Добавить товар в корзину' onClick={()=>{checker(props)
+      {Number(props.elem.id) != Number(checks.id) ?  <div title='Добавить товар в корзину' onClick={()=>{checker(props)
     setChecks(0)  
     setNullInfo(!nullInfo)
     changePrice(Number(props.elem.price))
     }
-    } className='Button_StorePage'>+</Button> 
-      : <Button title='Ваш товар в корзине' className='Button_StorePage btn-success'>✓</Button>}
+    } className='Button_StorePage'></div> 
+      : <div title='Ваш товар в корзине' className='Button_StorePage_added'></div>}
      
       <div className='div_for_price_storePage'>{props.elem.price} ₽</div>
       <div className='div_for_name_storePage'>{props.elem.name}</div>

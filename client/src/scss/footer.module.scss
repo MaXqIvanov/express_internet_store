@@ -1,0 +1,38 @@
+.main{
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    font-size: small;
+    width: 100%;
+    border-top: 1px solid white;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+.confidence {
+    height: 100%;
+  
+    @media (max-width: 900px) {
+      padding-left: 15px;
+    }
+
+    &:hover{
+        text-shadow: 0.5px 0.5px 10px rgb(0, 194, 253);
+        transition: all 0.35s linear;
+    }
+
+    p {
+        cursor: pointer;
+      }
+  }
+  
+.contacts{
+    height: 100%;
+    margin-left: 15px;
+    cursor: pointer;
+
+    &:hover{
+        text-shadow: 0.5px 0.5px 10px rgb(0, 194, 253);
+        transition: all 0.35s linear;
+    }
+}

@@ -7,7 +7,7 @@ import { OrderPage } from './OrderPage';
 export const BasketPage = () => {
   // const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem!= "auth"))
   const [r, serR] = useState(Object.keys(localStorage).filter((elem:any)=> elem[0] == elem[0].toUpperCase() && elem[0]!= "_"))
-  const [orderlabel, setOrderLabel] = useState(false)
+  const [orderlabel, setOrderLabel] = useState<boolean>(false)
   
   
   return (

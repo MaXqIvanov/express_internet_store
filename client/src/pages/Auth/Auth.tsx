@@ -11,7 +11,7 @@ export const Auth = () => {
     const navHome = useNavigate()
     const [name, setName]= useState<any>((localStorage.getItem("auth") != null ) ? JSON.parse(String(localStorage.getItem("auth"))) : "")
     // Auth
-    const [authSite, setAuthSite]= useState(true)
+    const [authSite, setAuthSite]= useState<boolean>(true)
     try {
         useEffect(() => {
             gapi.load('auth2', function(){
@@ -32,11 +32,11 @@ export const Auth = () => {
             
         ).then((user:any)=> {
             
-            let g = user.getBasicProfile()
-            let imageAuth = user.getBasicProfile().getImageUrl()
-            let nameAuth = user.getBasicProfile().getName()
-            let emailAuth = user.getBasicProfile().getEmail()
-            let authAuth = true;
+            let g:any = user.getBasicProfile()
+            let imageAuth:string = user.getBasicProfile().getImageUrl()
+            let nameAuth:string = user.getBasicProfile().getName()
+            let emailAuth:string = user.getBasicProfile().getEmail()
+            let authAuth:boolean = true;
             g = {...g, imageAuth, nameAuth, emailAuth, authAuth}
              localStorage.setItem("auth", JSON.stringify(g))
             setName((localStorage.getItem("auth") != null ) ? JSON.parse(String(localStorage.getItem("auth"))) : "")

@@ -47,6 +47,28 @@ $main_order-color: white;
   position: absolute;
   bottom: 0px;
   right: 0px;
+  height: 45px;
+  width: 45px;
+  background-image: url("./images/home/add_basket_prods.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  @media(min-width: 1400px){
+    height: 50px;
+    width: 50px; 
+    font-size: x-large;
+  }
+}
+.Button_StorePage_added{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+  background-image: url("./images/home/add_backet.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
   @media(min-width: 1400px){
     height: 50px;
     width: 50px; 
@@ -107,7 +129,9 @@ $main_order-color: white;
   @media(min-width: 1400px){
     font-size: large;
   }
-
+  @media(max-width:700px){
+    font-size: small;
+  }
   @media(max-width:600px){
     position: absolute;
     top: 40px;
@@ -438,6 +462,15 @@ $main_order-color: white;
   @media(min-width: 1400px){
     font-size: large;
   }
+
+}
+.nav-link{
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: -10px;
+  &:hover{
+    margin-left: 5px;
+    transition: all 0.35s linear;
+}
 }
 .main_div_setName{
   position: absolute;
@@ -506,4 +539,10 @@ $main_order-color: white;
   @media(max-width:800px){
     font-size: x-small;
   }
+}
+.Spinner_contacts{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }

@@ -8,6 +8,7 @@ import { OneProodsPage } from './components/OneProodsPage';
 import { Auth } from './pages/Auth/Auth';
 import { BasketPage } from './pages/BasketPage';
 import { ConfidencePage } from './pages/ConfidencePage';
+import { Contacts } from './pages/Contacts';
 import { StorePage } from './pages/StorePage';
 import { Footer } from './templates/Footer';
 import { Header } from './templates/Header';
@@ -59,6 +60,7 @@ function App() {
                 <Route path="/:id/" element={<div className='maid_div_page2'><Header setPage={setPage} setTypeGoods={setTypeGoods}/><OneProodsPage index={index}/> <Footer /></div>} />
                 <Route path="/train" element={<Suspense fallback={<Spinner animation="grow" />}><div className='maid_div_page2'><Train /></div></Suspense>} />
                 <Route path="/admin" element={<Suspense fallback={<Spinner animation="grow" />}><div className='maid_div_page2'><AdminPage /></div></Suspense>} />
+                <Route path="/contacts" element={<Suspense fallback={<Spinner className="Spinner_contacts" animation="grow" />}><div className='maid_div_page2'><Header setPage={setPage} setName={setName}  setTypeGoods={setTypeGoods}/><Contacts /></div></Suspense>} />
 
       </Routes>
     </div>

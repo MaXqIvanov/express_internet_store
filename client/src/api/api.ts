@@ -155,13 +155,15 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 //LARAVEL - PHP FUNC - LOCALHOST
 // export const apiGetGoods = (typeGoods:any, page:any, sortPrice:any, limit:any, setPageCount:any, dispatch:any)=>{
 //   axios.get(`http://127.0.0.1:5000/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&name=${name}`).then((response: any) => {
-
-
 //     dispatch(addProd(response.data.data))
+//     if(response.data.message){
+//     dispatch(changeErrors(response.data.message))
+//     }else {dispatch(changeErrors(""))}
 //     setPageCount(Math.ceil(response.data.total/limit))
 //     }).then(()=> dispatch(changeLoading(false))
 //     );
 // }
+
 // export const APIGetMessages = (item:any, setMessages:any,setCountMessages:any, active:any)=>{
 //   axios.get(`http://localhost:5000/api/messages/${item.id}?page=${active}&limit=10`).then((data:any)=>{
 //   setMessages(data.data.data)
@@ -173,12 +175,9 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 //   axios.post('http://localhost:5000/api/admin/1',{
 //       'email': auth.emailAuth
 //   }).then((response:any)=>{
-    
-        
 //     let obj = {"role":response.data.role, "email":response.data.email}
 //     dispatch(changeRolePerson(obj))
 //       setData(response.data)
-
 //     } )
 // }
 //
@@ -214,27 +213,27 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 //      }).then((message:any)=>alert(JSON.stringify(message.data)))
 // }
 
-// // ____________________________________________________________________________________________
+
 // export const AdminRemoveProods = (password:any, auth:any, data:any)=>{
 //   axios.post(`https://store.web-liter.ru/api/goods/delete/${data.id}`,{
 //       'password': password,
 //       'email': auth.emailAuth
 //   }).then((message:any)=>message.data.message && alert(JSON.stringify(message.data.message)))
 // }
-// // ____________________________________________________________________________________________
+
 // export const AdminGetAllProods = (type:any,setAllProods:any)=>{
 //   let sortPrice = false
 //   axios.get(`https://store.web-liter.ru/api/goods/${type}?limit=100`+`&sort=${sortPrice}`).then((data:any)=>
 //     setAllProods(data.data.data)
 //   )
 // }
-// // ____________________________________________________________________________________________
+
 // export const AuthUsers = (emailAuth:any)=>{
 //   axios.post("https://store.web-liter.ru/api/users",{
 //       "email": emailAuth, "password":new Date
 //    })
 // }
-// // _____________________________________________________________________________________________
+
 // export const AuthUsersForms = (data:any, props:any, nav:any)=>{
 //   axios.post('https://store.web-liter.ru/api/users',{
 //       'email':data.LoginEmail,
@@ -258,7 +257,7 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 //     }
 //     )
 // }
-// // _____________________________________________________________________________________________
+
 // export const RegisterUsersForms = (data:any, setIsRegistr:any, isRegistr:any)=>{
 //      axios.post('https://store.web-liter.ru/api/users',{
 //         'email':data.RegisterEmail,
@@ -272,19 +271,18 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 //           setIsRegistr(!isRegistr)}
 //       })
 // }
-// // _____________________________________________________________________________________________
+
 // export const AuthInVK = (emailAuth:any)=>{
 //   axios.post("https://store.web-liter.ru/api/users",{
 //       "email": emailAuth, "password":new Date
 //    })
 // }
-// // _____________________________________________________________________________________________
+
 // export const APIOrders=(rUp:any, price:any, reradeName:any, reradeNumber:any)=>{
 //   axios.post('https://store.web-liter.ru/api/orders',
 //   {"name":`${rUp}`,"price":Number(price),"namePerson":reradeName,"telPerson":String(reradeNumber)});
 // }
-// // _____________________________________________________________________________________________
-// // ____________________________________________________________________________________________
+
 // export const APISendMessages = (item:any, data:any, newAuth:any, setRerander:any, rerander:any)=>{
 // axios.post(`https://store.web-liter.ru/api/messages/${item.id}`,{
 //   'idProods':item.id , 'messages':data.text_message,
@@ -292,7 +290,7 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 // }).then((data:any)=> {
 //   setRerander(!rerander)})
 // }
-// // ____________________________________________________________________________________________
+
 // export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any, rerander:any)=>{
 // axios.post(`https://store.web-liter.ru/api/messages/delete/${data}`,{
 //   "email": email,
@@ -300,17 +298,17 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 // }).then(()=> setRerander(!rerander))
 // }
 
-// //
-// //
-// //LARAVEL - PHP FUNC - LOCALHOST
 // export const apiGetGoods = (typeGoods:any, page:any, sortPrice:any, limit:any, setPageCount:any, dispatch:any)=>{
 // axios.get(`https://store.web-liter.ru/api/goods/${typeGoods}`+`?page=${page}`+`&sort=${sortPrice}`+`&limit=${limit}`+`&name=${name}`).then((response: any) => {
-  
-//   dispatch(addProd(response.data.data))
-//   setPageCount(Math.ceil(response.data.total/limit))
-//   }).then(()=> dispatch(changeLoading(false))
-//   );
+//     dispatch(addProd(response.data.data))
+//     if(response.data.message){
+//     dispatch(changeErrors(response.data.message))
+//     }else {dispatch(changeErrors(""))}
+//     setPageCount(Math.ceil(response.data.total/limit))
+//     }).then(()=> dispatch(changeLoading(false))
+//     );
 // }
+
 // export const APIGetMessages = (item:any, setMessages:any,setCountMessages:any, active:any)=>{
 // axios.get(`https://store.web-liter.ru/api/messages/${item.id}?page=${active}&limit=10`).then((data:any)=>{
 // setMessages(data.data.data)
@@ -322,10 +320,8 @@ export const APIDeleteMessage = (data:any, email:any, pass:any, setRerander:any,
 // axios.post('https://store.web-liter.ru/api/admin/1',{
 //     'email': auth.emailAuth
 // }).then((response:any)=>{
-      
 //   let obj = {"role":response.data.role, "email":response.data.email}
 //   dispatch(changeRolePerson(obj))
 //     setData(response.data)
-
 //   } )
 // }

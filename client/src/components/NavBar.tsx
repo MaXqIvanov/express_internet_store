@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Navbar,Container,Offcanvas,Nav,NavDropdown,Form,Button,FormControl } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import T from 'i18n-react';
 
 export const NavBar = (props:any) => {
   
@@ -35,7 +34,7 @@ export const NavBar = (props:any) => {
               <Offcanvas.Title style={{color: "black"}} id="offcanvasNavbarLabel">Web Liter.ru</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body >
-              <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav className="justify-content-end flex-grow-1 pe-3 ">
                   {positionsSearch.length >= 1 ? positionsSearch.map((elem:any, index:any)=><Nav.Link data-bs-dismiss="offcanvas" key={index} href="#"  style={{color: "black"}}  onClick={()=>{
                       props.setName("")
                       props.setPage(1)
@@ -47,7 +46,7 @@ export const NavBar = (props:any) => {
                   props.setTypeGoods(Object.values(elem)[0]) 
             navHome("/")}}>{ Object.keys(elem)[0]} </Nav.Link>)}
               </Nav>
-              <Form className="d-flex">
+              <Form className="d-flex mt-2">
                 <FormControl
                   type="search"
                   placeholder="Поиск"

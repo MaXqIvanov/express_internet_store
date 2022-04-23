@@ -11,7 +11,7 @@ const AdminPaneldelete = React.lazy(()=> import('./AdminPaneldelete'))
 
 export const AdminPage = () => {
     const dispatch = useDispatch()
-    const [variant, setVariant] = useState(0)
+    const [variant, setVariant] = useState<number>(0)
     const { 
         register,
         formState: {
