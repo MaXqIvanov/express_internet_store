@@ -1,0 +1,50 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    height: 50%;
+    width: 50%;
+    text-align: center;
+
+    @media(max-width:600px){
+        width: 90%;
+    }
+}
+.Form{
+    position: relative;
+}
+.ButtonSub{
+
+}
+.nickName_Button{
+    margin-top: 10px;
+    height: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% 39%;
+    column-gap: 1%;
+}
+.name_message{
+    width: 100%;
+}
+.erros_Div{
+    display: flex;
+    width: 100%;
+    color: red;
+    margin-top: 10px;
+}
+.recapcha{
+    visibility: hidden;
+}
+.textCapcha{
+    font-size: xx-small;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+   @media(max-width:450px){
+       font-size: 8px;
+   }
+}
