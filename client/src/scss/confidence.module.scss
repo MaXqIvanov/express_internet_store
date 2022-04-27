@@ -6,6 +6,13 @@
   align-items: center;
   position: relative;
   scroll-behavior: smooth;
+  
+  @media(min-width: 1400px){
+    font-size: large;
+  }
+  @media(min-width: 1800px){
+    font-size: xx-large;
+  }
 }
 .main_div_wrapper {
   height: 100%;
@@ -19,8 +26,8 @@
   }
 }
 .upper {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   border-radius: 50%;
   position: fixed;
   bottom: 20px;
@@ -29,11 +36,17 @@
   font-size: 32px;
   cursor: pointer;
   background-image: url('../images/arrow_top.svg');
- 
+  background-repeat: no-repeat;
+  background-size: contain;
     text-decoration: none;
     color: white;
  background-repeat: no-repeat;
     &:hover{
       color: rgb(255, 255, 255);
+    }
+
+    @media(min-width: 1400px){
+      height: 60px;
+      width: 60px;
     }
 }

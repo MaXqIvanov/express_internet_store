@@ -20,7 +20,7 @@ export const TempsBasketPage = (props:any) => {
         <div className='description_div_basketPage'>{props.props.description}</div>
         {props.props.ordered ? <div className='order_confirm'>Ваш заказ оформлен</div> : <div className='order_confirm'>ждёт оформления...</div>}
         
-        <Button variant="outline-light" className='btn_delete_basket btn '
+        <Button title='Удалить товар из корзины' variant="outline" className='btn_delete_basket btn '
         onClick={()=>{
           changePrice(Number(props.props.price))
           removeItemStorage(props.props.name)

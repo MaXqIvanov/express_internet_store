@@ -10,8 +10,9 @@ import { useNavigate } from 'react-router-dom'
       <div className={s.main}>
           <div onClick={()=>{history('/confidentiality')
 
-             }} className={s.confidence} title='Узнайте подробнее о конфиденциальности ваших данных'><p>•политика конфиденциальности</p></div>
-          <div onClick={()=>{history('/contacts')}} className={s.contacts}>•контакты</div>
+             }} className={s.confidence} title='Узнайте подробнее о конфиденциальности ваших данных'><span>•политика конфиденциальности</span></div>
+          <div onClick={()=>{history('/contacts')}} className={s.contacts}><span>•контакты</span></div>
+          <div onClick={()=>{history('/errors')}} title="У вас возникли ошибки?" className={s.anyMessage}></div>
     </div>
 )
 }

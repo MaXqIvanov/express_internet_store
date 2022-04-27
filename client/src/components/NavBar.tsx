@@ -20,10 +20,10 @@ export const NavBar = (props:any) => {
     
   return (
       visible ? 
-        <Navbar collapseOnSelect  variant="dark"   expand={false}>
+        <Navbar className='Navbar' collapseOnSelect  variant="dark"   expand={false}>
         <Container fluid>
         <Navbar.Toggle   className='main_nav_button' aria-controls="offcanvasNavbar" />
-          <Navbar.Brand className='main_logo_div'  onClick={()=>navHome("/")}>Web Liter.ru</Navbar.Brand>
+          <Navbar.Brand title='Вернуться на главную' className='main_logo_div'  onClick={()=>navHome("/")}><div className='main_logo_div_smallV2'>Web Liter<span>.ru</span></div><div className="main_logo_div_small">VL</div></Navbar.Brand>
           <Navbar.Offcanvas
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"

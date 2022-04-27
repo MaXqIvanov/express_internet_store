@@ -30,10 +30,24 @@ useEffect(() => {
     <div className='main_div_navigation'>
       <NavBar setPage={props.setPage} setName={props.setName}  setTypeGoods={props.setTypeGoods}/>
         <div className='link_price_block'>
-           <Link className='Link' to="/">Главная</Link>
-           <Link title='Перейти в корзину' className='Link Link_basket' to="/Basket"></Link>
-           <div  className='price_navigation_block'>{price} ₽</div>
-           <div style={ authNav.imageAuth ? {backgroundImage: `url(${authNav.imageAuth})`}:{backgroundImage: `url(${image})`}} onClick={()=>navAuth('/auth')} title={authNav.imageAuth ? 'Вы уже вошли в систему': 'Войти в систему'} className='SignIn_div'></div>
+        <div onClick={()=>navAuth('/contacts')} className='Location_main'>
+          <div className='Location'></div>
+          <div>адреса</div>
+        </div>
+        <div className='Auth_main_div'>
+          <div style={ authNav.imageAuth ? {backgroundImage: `url(${authNav.imageAuth})`}:{backgroundImage: `url(${image})`}} onClick={()=>navAuth('/auth')} title={authNav.imageAuth ? 'Вы уже вошли в систему': 'Войти в систему'} className='SignIn_div'></div>
+          <div className='div_block_logIn'>войти</div>
+        </div>
+        <div className='basket_page_main_1'>
+          <div className='basket_page_main'>
+            <Link title='Перейти в корзину' className='Link Link_basket' to="/Basket"></Link>
+          </div>
+          <div>корзина</div>
+        </div>
+           <div className='main_money_div'>
+              <div className='money_image_nav'></div>
+              <div title='Суммарная стоимость добавленных товаров'  className='price_navigation_block'>{price} ₽</div>
+           </div>
         </div>
     </div>
   )

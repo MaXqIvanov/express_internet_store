@@ -26,9 +26,9 @@ class UserController {
 
     }
 
-    async createNew(req: any, res: any, next: any) {
+    async auth(req:any, res:any, next:any){
         try {
-            const { email, password, role, token } = req.body
+            const { email, password} = req.body
 
             const old = await User.findOne(
                 {
@@ -38,37 +38,58 @@ class UserController {
 
             )
             let zagl: any = old && old.email
-            let pass: any = old && old.password
-            let bcpassword = bcrypt.hashSync(password, 7)
             let bspasswordCheck: any = old && bcrypt.compareSync(password, old.password)
-            if (String(zagl) !== String(email)) {
-                let capcha:any = false;
-                 // ЗАДЕПЛОИТЬ В PHP!!!
-                 try {
-                    capcha = await CapchaService.capchaResponseFunc(token)
-                 } catch (error) {
-                     capcha = true
-                 }
-                if(capcha === true){
-                    const activationLink = uuid.v4();
-                    await MailService.sendMailAnyInform(email, activationLink)
-                    const device = await User.create({
-                        email, 'password': bcpassword, 
-                        verification: activationLink
-                    })
-                    return res.json(device)
-                } else return res.json("false")
-            }
-            else if ((String(zagl) == String(email)) && (bspasswordCheck)) {
+            if ((String(zagl) == String(email)) && (bspasswordCheck)) {
                 let obj = { email: old.email, id: old.id }
                 return res.json(obj)
             }
             else return res.json("false")
+    
 
+         
+        } catch (error) {
+            return res.json("false")
+        }
+    }
 
+    async createNew(req: any, res: any, next: any) {
+        try {
+            const { email, password,token } = req.body
+            
+            const old = await User.findOne(
+                {
+                    where: { email },
+                    attributes: ['email', 'password', 'id'], //object
+                },
 
-        } catch (error: any) {
-            return res.json(error.message)
+            )
+            
+            if(old){
+                return res.json("false")
+            }else {
+
+                     let capcha:any = false;
+                     // ЗАДЕПЛОИТЬ В PHP!!!
+                     try {
+                        capcha = await CapchaService.capchaResponseFunc(token)
+                     } catch (error) {
+                         capcha = true
+                     }
+                    if(capcha === true){
+                        const activationLink = uuid.v4();
+                        let bcpassword = bcrypt.hashSync(password, 7)
+                        await MailService.sendMailAnyInform(email, activationLink)
+                        const device = await User.create({
+                            email, 'password': bcpassword, 
+                            verification: activationLink
+                        })
+                        return res.json({"message":"Регистрация прошла успешно"})
+                    } else return res.json("false")
+                }
+
+            }
+        catch (error: any) {
+            return res.json("false")
         }
     }
 

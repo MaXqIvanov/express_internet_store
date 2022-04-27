@@ -1,5 +1,5 @@
 .main{
-    height: 30px;
+    height: 35px;
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -8,10 +8,18 @@
     border-top: 1px solid white;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
+    position: relative;
+    @media(min-width: 1400px){
+        font-size: large;
+        height: 40px;
+    }
 }
 .confidence {
     height: 100%;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     @media (max-width: 900px) {
       padding-left: 15px;
     }
@@ -30,9 +38,27 @@
     height: 100%;
     margin-left: 15px;
     cursor: pointer;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover{
         text-shadow: 0.5px 0.5px 10px rgb(0, 194, 253);
         transition: all 0.35s linear;
+    }
+}
+.anyMessage{
+    height: 33px;
+    width: 40px;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    background-image: url("../images/footer/question_message.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    @media(max-width: 600px){
+        right: 0px;
+   
     }
 }

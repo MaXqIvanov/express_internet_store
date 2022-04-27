@@ -10,12 +10,12 @@ $main_order-color: white;
 // tempStorePage
 .tempStorePage_div {
   font-family: 'Montserrat', sans-serif;
-  border: 1px solid white;
+  box-shadow: 0px 0px 7px rgb(131, 205, 255);
   height: 300px;
   width: 250px;
   box-sizing: border-box;
   position: relative;
-
+  background: rgb(18, 22, 29);
   @media(min-width: 1400px){
     height: 380px;
     width: 350px;
@@ -47,15 +47,15 @@ $main_order-color: white;
   position: absolute;
   bottom: 0px;
   right: 0px;
-  height: 45px;
-  width: 45px;
+  height: 32px;
+  width: 32px;
   background-image: url("./images/home/add_basket_prods.svg");
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
   @media(min-width: 1400px){
-    height: 50px;
-    width: 50px; 
+    height: 42px;
+    width: 42px; 
     font-size: x-large;
   }
 }
@@ -63,15 +63,15 @@ $main_order-color: white;
   position: absolute;
   bottom: 0px;
   right: 0px;
-  height: 40px;
-  width: 40px;
-  background-image: url("./images/home/add_backet.svg");
+  height: 32px;
+  width: 32px;
+  background-image: url("./images/home/add_basket.svg");
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
   @media(min-width: 1400px){
-    height: 50px;
-    width: 50px; 
+    height: 42px;
+    width: 42px; 
     font-size: x-large;
   }
 }
@@ -79,6 +79,7 @@ $main_order-color: white;
   position: relative;
   padding-bottom: 20px;
 }
+
 .Pagination {
   position: absolute;
   bottom: -50px;
@@ -107,16 +108,16 @@ $main_order-color: white;
   border-color: rgb(255, 255, 255);
   box-sizing: border-box;
   @media (max-width: 600px) {
-    border-color: rgb(250, 0, 196);
+    border-color: rgb(1, 69, 170);
   }
 }
 
 .div_for_name_storePage {
   position: absolute;
-  left: 50%;
+ text-align: center;
   top: 70%;
-  transform: translate(-50%, -50%);
-
+  transform: translate(0, -50%);
+  width: 100%;
   @media(min-width: 1400px){
     font-size: x-large;
   }
@@ -151,7 +152,7 @@ $main_order-color: white;
   width: 150px;
   height: 30px;
   position: fixed;
-  bottom: 25px;
+  bottom: 35px;
   right: 40px;
   cursor: pointer;
   border: 1px main_order solid;
@@ -167,7 +168,7 @@ $main_order-color: white;
     font-size: large;
     height: 35px;
     width: 160px;
-    bottom: 30px;
+    bottom: 50px;
   }
 }
 .Order_label {
@@ -179,7 +180,8 @@ $main_order-color: white;
   transform: translate(-50%, -50%);
   border-radius: 25px;
   font-family: 'Montserrat', sans-serif;
-  background: rgb(0, 72, 85);
+  background: rgb(24,33,43);
+  box-shadow: 0px 0px 7px rgb(1, 194, 201);
   color: $main_order-color;
   @media (max-width: 800px) {
     width: 90%;
@@ -208,11 +210,22 @@ $main_order-color: white;
   border-radius: 25px;
   width: 100%;
   height: 200px;
-  border: solid $main_order-color 1px;
   position: relative;
-
+  font-family: 'Montserrat', sans-serif;
+  font-size: medium;
+  color: black;
+  background: rgba($color: rgb(255, 255, 255), $alpha: 0.99);
+  box-shadow: 0px 0px 7px rgb(255, 255, 255);
   @media(min-width: 1400px){
     height: 220px;
+    font-size: large;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%,0);
+  }
+
+  @media(max-width:800px){
+    font-size: small;
   }
 }
 .temp_div_img_basketPage {
@@ -224,7 +237,7 @@ $main_order-color: white;
   transform: translate(0, -50%);
   background-repeat: no-repeat;
   background-size: contain;
-
+  
   @media (max-width: 690px) {
     height: 140px;
     top: 10px;
@@ -282,12 +295,21 @@ $main_order-color: white;
   top: 5px;
   right: 5px;
   border-radius: 50%;
+  color: rgb(0, 0, 0);
+  
+  &:hover{
+    color: rgb(255, 1, 1);
+  }
   @media(max-width:500px){
     height: 30px;
     width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  @media(min-width: 1400px){
+    font-size: x-large;
+    top: 0px;
   }
 }
 .description_div_basketPage {
@@ -308,18 +330,21 @@ $main_order-color: white;
   @media(min-width: 1400px){
     left: 400px;
     font-size: large;
+    width: 500px;
     }
 }
 
 // TempOrderPage
 .TempOrderPage_div {
-  border-bottom: 1px solid $main_order-color;
+  box-shadow: 0px 0px 1px white ;
   box-sizing: border-box;
-
-  height: 50px;
+  height: 49px;
   width: 100%;
   position: relative;
-
+  &:hover{
+    box-shadow: 0px 0px 5px rgb(0, 168, 190);
+    transition: all 0.35s linear;
+  }
   .data_name {
     position: absolute;
     top: 50%;
@@ -342,6 +367,7 @@ $main_order-color: white;
 .Order_page_basket {
   margin-top: 75px;
   border-top: 1px solid rgb(255, 255, 255);
+  box-sizing: border-box;
   height: 200px;
   overflow-y: scroll;
   border-top-right-radius: 15px;
@@ -402,12 +428,17 @@ $main_order-color: white;
   position: absolute;
   bottom: 5px;
   right: 10px;
-  width: 180px;
+  width: auto;
   height: 20px;
   color: crimson;
+  @media(min-width: 1400px){
+    right: 20px;
+  }
+  font-size: small;
+
 }
 .Order_page_basket::-webkit-scrollbar {
-  width: 12px; /* ширина scrollbar */
+  width: 8px; /* ширина scrollbar */
 }
 .Order_page_basket::-webkit-scrollbar-track {
   background: rgb(255, 255, 255); /* цвет дорожки */
@@ -460,7 +491,16 @@ $main_order-color: white;
 }
 .offcanvas-body{
   @media(min-width: 1400px){
-    font-size: large;
+    font-size: x-large;
+  }
+
+}
+#offcanvasNavbarLabel{
+  font-size: xx-large;
+}
+.offcanvas{
+  @media(min-width: 1400px){
+    width: 30%;
   }
 
 }
@@ -477,13 +517,21 @@ $main_order-color: white;
   top: 0px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 250px;
+  width: 30%;
   display: flex;
-
   @media(max-width:600px){
- 
+    width: 250px;
+  }
+  @media(min-width: 1400px){
+
   }
 }
+.input_search{  
+  @media(min-width: 1400px){
+    font-size: medium;
+  }
+}
+
 .ButtonSearch{
   height: 30px;
   width: 30px;
@@ -545,4 +593,114 @@ $main_order-color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
+}
+.ReCAPTCHA{
+  position: absolute;
+  visibility: hidden;
+  width: 0px !important;
+}
+.Location_main{
+  margin-right: 10px;
+  cursor: pointer;
+
+  @media(min-width: 1400px){
+
+  }
+}
+.Location{
+  height: 30px;
+  width: 30px;
+  background-image: url("./images/header/location.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+
+  @media(min-width: 1400px){
+    margin-top: 5px;
+    height: 38px;
+    width: 38px;
+  }
+}
+.Auth_main_div{
+  cursor:context-menu;
+  margin-right: 15px;
+
+  @media(min-width: 1400px){
+      margin-left: 15px;
+  }
+}
+.SignIn_div {
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  border-radius: 50%;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @media(min-width: 1400px){
+    height: 43px;
+    width: 43px;
+  }
+}
+.basket_page_main{
+  width: 60px;
+  height: 30px;
+  display: flex;
+  margin-right: 10px;
+  @media(min-width: 1400px){
+    height: 43px;
+  }
+  @media(max-width:600px){
+    margin-right: 1px;
+  }
+}
+.basket_page_main_1{
+
+  cursor:context-menu;
+
+  @media(min-width: 1400px){
+    margin-left: 10px;
+  }
+}
+.div_block_logIn{
+  min-width: 40px;
+}
+.main_logo_div_small{
+  display: none;
+
+
+  @media(max-width:365px){
+    display: flex;
+    font-size: x-large;
+  }
+}
+.main_logo_div_smallV2{
+
+  @media(max-width: 365px){
+    display: none;
+  }
+}
+.money_image_nav{
+  margin: auto;
+ 
+  height: 33px;
+  width: 33px;
+  background-image: url("./images/header/ruble_nav.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media(min-width: 1400px){
+    height: 42px;
+    width: 42px;
+  }
+  @media(max-width:600px){
+    display: none;
+  }
+}
+.main_money_div{
+  @media(min-width: 1400px){
+    margin-left: 20px;
+  }
 }

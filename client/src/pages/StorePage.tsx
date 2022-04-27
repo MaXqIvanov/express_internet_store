@@ -61,7 +61,7 @@ mode: "onSubmit"
   return (
     <div className='main_div_StorePage_up'>
       <Form onSubmit={handleSubmit(searchProds)} className='main_div_setName' >
-      <Form.Control {...register('search',{
+      <Form.Control autoComplete='off' className='input_search' {...register('search',{
         minLength: {
           value:2 ,
           message: 'минимальная длина 2 символа'

@@ -7,7 +7,6 @@ import { APIDeleteMessage, APIGetMessages, APISendMessages, apiSetRaiting } from
 import s from '../scss/oneProd.module.scss'
 import {useForm} from 'react-hook-form'
 import image from '../images/send_message.svg'
-import axios from 'axios'
 
 export const OneProodsPage = (props:any) => {
       const {role} = useSelector((state:any)=> state.role)

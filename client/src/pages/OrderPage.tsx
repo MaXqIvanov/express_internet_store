@@ -55,14 +55,14 @@ export const OrderPage = (props:any) => {
         <Form >
             <Form.Group className='form_order_basket_tel'controlId="exampleForm.ControlInput1">
                 <Form.Label>Телефон:</Form.Label>
-                <Form.Control onChange={(event:any)=>{
+                <Form.Control autoComplete='off' onChange={(event:any)=>{
                      event.target.value.length < 13 ?
                      setReradeNumber(event.target.value) : alert("номер не должен быть больше 12 символов")
                 }} type="tel" placeholder="Ваш телефон" value={reradeNumber} />
             </Form.Group>
             <Form.Group className='form_order_basket_name' controlId="exampleForm.ControlInput1">
                 <Form.Label>Имя:</Form.Label>
-                <Form.Control onChange={(event:any)=>{
+                <Form.Control autoComplete='off' onChange={(event:any)=>{
                     event.target.value.length < 15 ?
                     setReradeName(event.target.value) : alert("Имя не должно быть больше 15 символов")
                     

@@ -10,15 +10,16 @@ const messagesController = require('../controllers/messagesController')
 
 const authMiddleware = require('../middleware/authMiddleware')
 // User
-router.get('/users/:email', UserController.getOne)
-router.post('/users', UserController.createNew)
+router.get('/users/:email', UserController.getOne)  
+router.post('/users/auth', UserController.auth)
+router.post('/users/regist', UserController.createNew)
 router.post('/users/:id', UserController.setRaitingProod)
 router.get('/activate/:link', UserController.setActivated)
 // Messages
 router.get('/messages/:id', messagesController.getAll)
 router.post('/messages/:id', messagesController.createNewPost)
 router.post('/messages/delete/:id',messagesController.deletePost)
-
+router.post('/messages/send/telegram', messagesController.sendTelegram)
 
 // Goods
 router.get('/goods/:type', goodsController.getAll )

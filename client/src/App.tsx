@@ -12,10 +12,13 @@ import { Contacts } from './pages/Contacts';
 import { StorePage } from './pages/StorePage';
 import { Footer } from './templates/Footer';
 import { Header } from './templates/Header';
+import ReCAPTCHA from "react-google-recaptcha"
 const Train = React.lazy(()=> import('./pages/Train'))
 const AdminPage = React.lazy(()=>import('./pages/adminPanel/AdminPage'))
+const Questions = React.lazy(()=> import('./pages/question/Questions'))
 
 function App() {
+  const recaptchaRef:any = React.useRef();
   const limit:number = 6   // число зависит от количества элементов, которые мы отображаем на одной страничке
   const searchString = new URLSearchParams(window.location.search);
   let truePage:any = searchString.get('page');
@@ -61,8 +64,17 @@ function App() {
                 <Route path="/train" element={<Suspense fallback={<Spinner animation="grow" />}><div className='maid_div_page2'><Train /></div></Suspense>} />
                 <Route path="/admin" element={<Suspense fallback={<Spinner animation="grow" />}><div className='maid_div_page2'><AdminPage /></div></Suspense>} />
                 <Route path="/contacts" element={<Suspense fallback={<Spinner className="Spinner_contacts" animation="grow" />}><div className='maid_div_page2'><Header setPage={setPage} setName={setName}  setTypeGoods={setTypeGoods}/><Contacts /></div></Suspense>} />
+                <Route path="/errors" element={<Suspense fallback={<Spinner animation="grow" />}><div className='maid_div_page2'><Header setPage={setPage} setName={setName}  setTypeGoods={setTypeGoods}/><Questions recaptchaRef={recaptchaRef}/></div></Suspense>} />
 
       </Routes>
+
+      <ReCAPTCHA hidden className="ReCAPTCHA"
+            ref={recaptchaRef}
+            sitekey="6LeGQ4IfAAAAAK9dGcts02qUCW4pbljK0rS_aLHH"
+            // onChange={onChange}
+            theme="dark"
+            size='invisible'   
+          />
     </div>
   );
 }

@@ -8,13 +8,16 @@
     @media(max-width:600px){
         grid-template-rows: 50% 50% 0%;
     }
+    @media(min-width: 1400px){
+        font-size: x-large;
+    }
 }
 .wrapper_bottom{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: left;
-
+    position: relative;
     @media(max-width:600px){
         display: block;
     }
@@ -62,6 +65,9 @@
     text-decoration: underline;
     text-decoration-color: rgb(165, 165, 165);
 
+    @media(min-width: 1400px){
+        font-size: x-large;
+    }
 }
 .Map{
     height: 100%;
@@ -73,9 +79,45 @@
     box-shadow: 0px 0px 10px rgb(230, 230, 230);
     @media(max-width:600px){
         width: 99vw;
-        padding-bottom: 10px;
+
         border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
+    }
+}
+.Map_load{
+    height: 100%;
+    width: 50vw;
+    box-sizing: content-box;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+    left: 40vw;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: shadow 4s linear;
+    @keyframes shadow{
+        0%{
+            box-shadow: 0px 0px 10px rgb(230, 230, 230);
+        }
+        100%{
+            box-shadow: 0px 0px 0px rgb(230, 230, 230);
+        }
+    }
+    @media(max-width:600px){
+        display: none;
+    }
+    .SpinnerContacts{
+        height: 50px;
+        width: 50px;
+        color: black;
+
+        @media(max-width:600px){
+            display: none;
+        }
     }
 }
 .pick_up_points{
@@ -116,7 +158,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    h5{
+        @media(min-width: 1400px){
+            font-size: x-large;
+        }
+    }
     .wrapper_top_left_centr{
         width: 90%;
         height: 90%;
@@ -151,7 +197,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    h5{
+        @media(min-width: 1400px){
+            font-size: x-large;
+        }
+    }
     .wrapper_top_right_centr{
         width: 90%;
         height: 90%;
@@ -180,6 +230,11 @@
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+
+    @media(min-width:1400px){
+        height: 58px;
+        width: 58px;
+    }
 }
 .telegram{
     display: flex;
@@ -192,6 +247,11 @@
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+
+    @media(min-width:1400px){
+        height: 56px;
+        width: 56px;
+    }
 }
 .image_whatsapp{
     margin-left: 5px;
@@ -201,6 +261,10 @@
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+    @media(min-width:1400px){
+        height: 58px;
+        width: 58px;
+    }
 }
 .image_facebook{
     margin-left: 2px;
@@ -210,6 +274,11 @@
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+
+    @media(min-width:1400px){
+        height: 58px;
+        width: 58px;
+    }
 }
 
 
@@ -226,3 +295,11 @@
     border-radius: 20px; /* закругления плашки */
     border: 3px solid #b8e5ff; /* padding вокруг плашки */
   }
+.zagl{
+    background: red;
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import s from '../scss/contacts.module.scss'
 import { YMaps, Map, Placemark, Clusterer } from 'react-yandex-maps';
+import { Spinner } from 'react-bootstrap';
 
 export const Contacts = () => {
     const[mock, setMock]=useState([{
@@ -23,8 +24,9 @@ export const Contacts = () => {
 
 
     
+    
   return (
-    <div className={s.main}>
+    <div id='open-chat' className={s.main}>
         <div className={s.wrapper_top}>
             <div className={s.wrapper_top_left}>
                 <div className={s.wrapper_top_left_centr}>
@@ -46,6 +48,7 @@ export const Contacts = () => {
                  </div>
             </div>
         </div> 
+        
         <YMaps query={{ apikey: process.env.REACT_APP_YANDEX_MAPS , load: "package.full"}}>
         <div className={s.wrapper_bottom}>
         <div className={s.orders_div_window}>
@@ -60,8 +63,9 @@ export const Contacts = () => {
             </div>
             <div></div>
         </div>
+        <div className={s.Map_load}><Spinner className={s.SpinnerContacts} animation={'border'}></Spinner></div>
         <Map  className={s.Map}  style={{color: 'white'}} state={{center: [...pointer], zoom: 11, behaviors: ['default', 'scrollZoom']}} defaultState={{center: [...pointer], zoom: 11,  behaviors: ["default", "scrollZoom"]}} >
-       
+        
         <Clusterer
         options={{
           preset: 'islands#invertedVioletClusterIcons',
@@ -96,7 +100,6 @@ export const Contacts = () => {
         </Map>
         </div>
         </YMaps>
-  
     </div>
   )
 }
