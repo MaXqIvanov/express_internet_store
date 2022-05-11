@@ -67,7 +67,6 @@ class UserController {
             if(old){
                 return res.json("false")
             }else {
-
                      let capcha:any = false;
                      // ЗАДЕПЛОИТЬ В PHP!!!
                      try {
@@ -78,9 +77,9 @@ class UserController {
                     if(capcha === true){
                         const activationLink = uuid.v4();
                         let bcpassword = bcrypt.hashSync(password, 7)
-                        await MailService.sendMailAnyInform(email, activationLink)
+                        const mail = await MailService.sendMailAnyInform(email, activationLink)
                         const device = await User.create({
-                            email, 'password': bcpassword, 
+                            'email': email, 'password': bcpassword, 
                             verification: activationLink
                         })
                         return res.json({"message":"Регистрация прошла успешно"})

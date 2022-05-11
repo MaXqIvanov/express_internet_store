@@ -1,23 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice } from '@reduxjs/toolkit';
 
 const errorsSlice = createSlice({
-    name: "errors",
-    initialState: {
-      errors: "" as string,
+  name: 'errors',
+  initialState: {
+    errors: '' as string,
+  },
+  reducers: {
+    changeErrors(state: any, action: any) {
+      state.errors = action.payload;
     },
-    reducers: {
-        changeErrors(state, action){
+  },
+});
 
-            state.errors = action.payload
-
-        },
-     
-    }
-})
-
-export default errorsSlice.reducer
-export const {
-    changeErrors,
-
-} = errorsSlice.actions
+export default errorsSlice.reducer;
+export const { changeErrors } = errorsSlice.actions;

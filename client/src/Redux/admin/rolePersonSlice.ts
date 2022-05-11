@@ -1,21 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice } from '@reduxjs/toolkit';
 
 const rolePersonSlice = createSlice({
-    name: "role",
-    initialState: {
-        role: "USER"
+  name: 'role',
+  initialState: {
+    role: 'USER',
+  },
+  reducers: {
+    changeRolePerson(state:any, action:any) {
+      state.role = action.payload;
     },
-    reducers: {
-        changeRolePerson(state, action){
-            state.role = action.payload
-        },
+  },
+});
 
-    }
-})
-
-export default rolePersonSlice.reducer
-export const {
-    changeRolePerson
-
-} = rolePersonSlice.actions
+export default rolePersonSlice.reducer;
+export const { changeRolePerson } = rolePersonSlice.actions;

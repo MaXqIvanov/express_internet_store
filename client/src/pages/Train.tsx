@@ -1,30 +1,23 @@
-
-import React, { useState, useEffect } from 'react'
-import s from '../scss/train/Train.module.scss'
-
-
-
-
-
+import React from 'react';
+import s from '../scss/train/Train.module.scss';
 
 export const Train = () => {
- 
-  const flatten=(array:any)=>{
-    
-   
-  }
-   console.log(flatten("12"));
-   
-  
+  const name1: any = new name(10);
+
   return (
     <div className={s.main}>
-        <div className={s.crap}>
-         123
-      
-      </div>
+      <div className={s.crap}>{name1.calc()}</div>
     </div>
-    
-  )
-}
-export default Train
+  );
+};
+export default Train;
 
+class name {
+  width: number;
+  constructor(parameters: any) {
+    this.width = parameters;
+  }
+  calc() {
+    return this.width;
+  }
+}

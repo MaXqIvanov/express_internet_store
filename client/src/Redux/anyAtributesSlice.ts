@@ -1,22 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // currentPage: window.location.pathname,
 const anyAtributesSlice = createSlice({
-    name: "anyAtributes",
-    initialState: {
-      currentPage: "/",
+  name: 'anyAtributes',
+  initialState: {
+    currentPage: '/',
+  },
+  reducers: {
+    changeCurrentPage(state, action) {
+      state.currentPage = action.payload;
     },
-    reducers: {
-        changeCurrentPage(state, action){
-        state.currentPage = action.payload
-        },
-        
-    }
-})
+  },
+});
 
-export default anyAtributesSlice.reducer
-export const {
-    changeCurrentPage,
-    
-
-} = anyAtributesSlice.actions
+export default anyAtributesSlice.reducer;
+export const { changeCurrentPage } = anyAtributesSlice.actions;

@@ -1,27 +1,23 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice } from '@reduxjs/toolkit';
 
 const oneProdSlice = createSlice({
-    name: "oneProd",
-    initialState: {
-      index: 1 as number,
-      oneProds: [] as any[],
+  name: 'oneProd',
+  initialState: {
+    index: 1 as number,
+    oneProds: [] as any[],
+  },
+  reducers: {
+    // eslint-disable-next-line
+    changeStateProods(state:any, action:any) {
+      state.index = action.payload.id;
+      state.oneProds = action.payload.elem;
     },
-    reducers: {
-        changeStateProods(state, action){
+    // eslint-disable-next-line
+    stateOneProde(state:any, action:any) { 
+      console.log(action);
+    },
+  },
+});
 
-            state.index = action.payload.id
-            state.oneProds = action.payload.elem
-        },
-        stateOneProde(state, action){
-            
-        },
-    }
-})
-
-export default oneProdSlice.reducer
-export const {
-    changeStateProods,
-    stateOneProde,
-
-} = oneProdSlice.actions
+export default oneProdSlice.reducer;
+export const { changeStateProods, stateOneProde } = oneProdSlice.actions;
